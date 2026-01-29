@@ -1,0 +1,20 @@
+.drawerContent {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(0.5rem);
+}
+
+.drawerHeader {
+  background: transparent;
+}
+
+.mobileNavItem {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 1rem 0;
+
+  &:active {
+    padding-left: 10px;
+  }
+}

@@ -1,25 +1,49 @@
 {
-  "name": "elitetechtalent",
+  "name": "elite-tech-talent-fe",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run lint && npm run typecheck && next dev",
+    "dev-nolint": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "next": "16.1.4",
+    "@mantine/core": "^8.2.8",
+    "@mantine/dates": "^8.2.8",
+    "@mantine/dropzone": "^8.2.8",
+    "@mantine/form": "^8.2.8",
+    "@mantine/hooks": "^8.2.8",
+    "@mantine/modals": "^8.2.8",
+    "@mantine/notifications": "^8.2.8",
+    "@mantine/spotlight": "^8.2.8",
+    "dayjs": "^1.11.18",
+    "next": "16.1.1",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "react-icons": "^5.5.0",
+    "sass": "^1.91.0",
+    "use-debounce": "^10.0.6",
+    "validator": "^13.15.15",
+    "zustand": "^5.0.8"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@svgr/webpack": "^8.1.0",
     "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "babel-plugin-react-compiler": "1.0.0",
-    "eslint": "^9",
-    "eslint-config-next": "16.1.4",
-    "typescript": "^5"
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3",
+    "@types/validator": "^13.15.3",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "eslint": "^9.39.2",
+    "eslint-config-next": "^16.1.1",
+    "typescript": "^5.9.2"
+  },
+  "overrides": {
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3"
   }
 }

@@ -1,0 +1,110 @@
+.infoContentRoot {
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  overflow: hidden;
+
+  .backgroundStack {
+    position: absolute;
+    inset: 0; // cover the container
+    z-index: 1;
+
+    .baseBackground {
+      position: absolute;
+      inset: 0;
+      background-image: url('/general-background.webp');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .contentContainer {
+    position: relative;
+    z-index: 2;
+
+    .contentTitle {
+      vertical-align: middle;
+      margin-top: 3rem;
+      color: var(--elite-tech-talent-blue);
+      font-size: 3.5rem;
+      padding: 2rem;
+      border-radius: 2rem;
+      width: fit-content;
+      background: radial-gradient(circle at 0% 0%, #000000 0%, #284686 100%);
+    }
+
+    .contentGridRoot {
+      padding: 2rem;
+      border-radius: 1rem;
+      background: radial-gradient(circle at 0% 0%, #000000 0%, #284686 100%);
+
+      .contentColContent {
+        padding: 1.5rem 1.75rem;
+        border: 2px solid white;
+        border-radius: 1rem;
+        height: 100%;
+
+        .contentColTitle {
+          color: var(--elite-tech-talent-red);
+          font-weight: bold;
+          font-size: 1.2rem;
+          margin: 0;
+        }
+
+        .contentColDescription {
+          color: white;
+          font-size: 1rem;
+          margin: 0;
+          line-height: 1.5;
+        }
+      }
+    }
+
+    .hexagonBorder {
+      width: clamp(15rem, 30vw, 24rem);
+      height: clamp(13.5rem, 27vw, 21.6rem);
+      // Create a hexagon shape for the border
+      background: linear-gradient(90deg, #003297 0%, rgba(0, 50, 151, 0) 100%);
+      padding: 1rem;
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+
+    .hexagonInner {
+      width: 100%;
+      height: 100%;
+
+      clip-path: inherit; // Inherit the hexagon shape from the parent
+      overflow: hidden;
+      position: relative;
+
+    }
+
+    .textStack {
+      flex: 1;
+
+      .textContentTitle {
+        color: white;
+        font-size: 3.5rem;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .textContentDescription {
+        text-align: center;
+        color: var(--elite-tech-talent-blue);
+        font-size: 1.6rem;
+        line-height: 1.5;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,59 @@
+.heroRoot {
+  position: relative;
+  color: #ffffff;
+  min-height: clamp(480px, 66vh, 640px);
+  display: flex;
+
+  .heroVideo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .heroOverlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+
+  .heroContainer {
+    width: 100%;
+
+    .heroHeader {
+      margin-bottom: 2rem;
+
+      .logoWrapper {
+        position: relative;
+        width: 240px;
+        aspect-ratio: 498 / 252;
+      }
+
+      .nav {
+        .navItem {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .heroBody {
+      .heroTitle {
+        font-size: 5rem;
+        text-transform: uppercase;
+        line-height: 1;
+        margin: 0;
+      }
+
+      .heroEyebrow {
+        font-size: 1.5rem; 
+        white-space: nowrap; // keep the line on one row
+        margin: 0;
+        display: block;
+      }
+    }
+  }
+
+}
