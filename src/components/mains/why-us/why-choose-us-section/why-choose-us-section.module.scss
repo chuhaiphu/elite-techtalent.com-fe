@@ -1,0 +1,57 @@
+.sectionRoot {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  .backgroundStack {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    .baseBackground {
+      position: absolute;
+      inset: 0;
+    }
+
+    .backgroundImage {
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .contentContainer {
+    position: relative;
+    z-index: 2;
+  }
+
+  .textBlock {
+    width: fit-content;
+
+    .sectionTitle {
+      color: white;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      padding: 2rem;
+      border-radius: 2rem;
+      width: fit-content;
+      background: radial-gradient(circle at 0% 0%, #000000 0%, #284686 100%);
+    }
+
+    .paragraphsWrapper {
+      width: 0;
+      min-width: 100%;
+
+      .paragraph {
+        font-size: clamp(1.2rem, 2vw, 1.5rem);
+        line-height: 1.5;
+        color: white;
+        padding: 0 2rem;
+
+        span {
+          color: var(--elite-tech-talent-red);
+          font-weight: bold;
+          font-size: inherit;
+        }
+      }
+    }
+  }
+}

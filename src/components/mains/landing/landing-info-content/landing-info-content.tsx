@@ -6,7 +6,14 @@ export default function LandingInfoContent() {
   return (
     <div className={classes.infoContentRoot}>
       <div className={classes.backgroundStack}>
-        <div className={classes.baseBackground} />
+        <div className={classes.baseBackground}>
+          <Image
+            src="/general-background.webp"
+            alt="Background"
+            fill={true}
+            className={classes.backgroundImage}
+          />
+        </div>
       </div>
       <Container className={classes.contentContainer} size="xl">
         <Stack gap="xl">

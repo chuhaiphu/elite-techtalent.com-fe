@@ -1,3 +1,4 @@
+import Image from "next/image";
 import classes from "./landing-intro-content.module.scss";
 import { Container, Flex, Stack } from "@mantine/core";
 
@@ -5,8 +6,22 @@ export default function LandingIntroContent() {
   return (
     <div className={classes.introContentRoot}>
       <div className={classes.backgroundStack}>
-        <div className={classes.baseBackground} />
-        <div className={classes.overlayBackground} />
+        <div className={classes.baseBackground}>
+          <Image
+            src="/general-background.webp"
+            alt="Background"
+            fill={true}
+            className={classes.backgroundImage}
+          />
+        </div>
+        <div className={classes.overlayBackground}>
+          <Image
+            src="/shakehand-with-map.webp"
+            alt="Shakehand with map"
+            fill={true}
+            className={classes.backgroundImage}
+          />
+        </div>
       </div>
       <Container className={classes.textContentTop} size="xl">
         <Flex align="center" justify="center" h="100%">

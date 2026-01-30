@@ -23,33 +23,16 @@
   .heroContainer {
     width: 100%;
 
-    .heroHeader {
-      margin-bottom: 2rem;
-
-      .logoWrapper {
-        position: relative;
-        width: 240px;
-        aspect-ratio: 498 / 252;
-      }
-
-      .nav {
-        .navItem {
-          font-size: 1.5rem;
-        }
-      }
-    }
-
     .heroBody {
       .heroTitle {
-        font-size: 5rem;
+        font-size: clamp(3rem, 5vw + 1rem, 5rem);
         text-transform: uppercase;
         line-height: 1;
         margin: 0;
       }
 
       .heroEyebrow {
-        font-size: 1.5rem; 
-        white-space: nowrap; // keep the line on one row
+        font-size: clamp(1.5rem, 2vw + 0.5rem, 2rem);
         margin: 0;
         display: block;
       }

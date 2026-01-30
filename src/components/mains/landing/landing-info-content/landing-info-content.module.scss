@@ -12,10 +12,11 @@
     .baseBackground {
       position: absolute;
       inset: 0;
-      background-image: url('/general-background.webp');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+    }
+
+    .backgroundImage {
+      object-fit: cover;
+      object-position: center;
     }
   }
 

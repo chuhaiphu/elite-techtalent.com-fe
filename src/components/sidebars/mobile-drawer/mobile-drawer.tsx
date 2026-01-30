@@ -1,5 +1,5 @@
 "use client";
-import { Burger, Drawer, Stack, Title } from "@mantine/core";
+import { Burger, Drawer, Stack } from "@mantine/core";
 import Link from "next/link";
 import classes from "./mobile-drawer.module.scss";
 import { useDisclosure } from "@mantine/hooks";
@@ -28,7 +28,7 @@ export function MobileDrawer() {
         onClose={close}
         size="100%"
         padding="xl"
-        title={<Title order={3}>Menu</Title>}
+        title={<span className={classes.drawerTitle}>Menu</span>}
         hiddenFrom="md"
         zIndex={1000}
         transitionProps={{ transition: 'fade', duration: 250 }}

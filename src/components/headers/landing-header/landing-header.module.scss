@@ -1,0 +1,19 @@
+.header {
+  margin-bottom: 2rem;
+
+  .logoWrapper {
+    position: relative;
+    width: 240px;
+    aspect-ratio: 498 / 252;
+  }
+
+  .nav {
+    .navItem {
+      font-size: 1.5rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+}
