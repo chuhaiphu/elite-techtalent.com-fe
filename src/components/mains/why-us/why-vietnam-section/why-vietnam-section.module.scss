@@ -1,0 +1,115 @@
+.root {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(1.25rem, 3vw, 2rem);
+
+  .backgroundStack {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    .baseBackground {
+      position: absolute;
+      inset: 0;
+      filter: brightness(0.25);
+    }
+
+    .backgroundImage {
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .contentLayer {
+    position: relative;
+    z-index: 2;
+  }
+
+  .grid {
+    row-gap: 5rem;
+
+    .cellLeft,
+    .cellRight {
+      padding-bottom: clamp(0.5rem, 3vw, 2rem);
+    }
+
+    .cellLeft {
+      .title {
+        height: 6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: clamp(0.75rem, 4vw, 2.5rem);
+        background: radial-gradient(circle at 0% 0%, #000000, #284686);
+        color: white;
+        padding: 0.5rem;
+        border-radius: 1rem;
+      }
+
+      .subtitle {
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: clamp(0.6rem, 2.5vw, 1.2rem);
+        background: linear-gradient(180deg, #84a9ff, #f5f8ff);
+        border-radius: 1rem;
+        padding: 0.5rem;
+      }
+    }
+
+    .cellRight {
+      .contentWrap {
+        min-height: 3rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .titleContent {
+        height: 6rem;
+        display: flex;
+        align-items: center;
+        font-size: clamp(0.7rem, 3vw, 1.5rem);
+        background: linear-gradient(180deg, #84a9ff, #f5f8ff);
+        border-radius: 1rem;
+        padding: 0.75rem;
+      }
+
+      .subtitleContent {
+        color: white;
+        font-size: clamp(0.5625rem, 1.8vw, 1rem);
+
+        span.highlight {
+          font-size: inherit;
+          color: var(--elite-tech-talent-red);
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .quotesStack {
+    margin-top: 2rem;
+
+    .quoteCard {
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      border: 1px solid color-mix(in srgb, var(--elite-tech-talent-red) 60%, transparent);
+      background: color-mix(in srgb, var(--elite-tech-talent-red) 30%, transparent);
+    }
+
+    .quoteText {
+      color: white;
+      font-size: clamp(0.75rem, 2vw, 1rem);
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    .quoteAuthor {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: clamp(0.65rem, 1.5vw, 0.9rem);
+    }
+  }
+}

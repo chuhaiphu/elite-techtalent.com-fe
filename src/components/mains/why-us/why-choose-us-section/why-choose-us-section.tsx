@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Container, Grid, GridCol, Stack } from "@mantine/core";
 import LandingHeader from "../../../headers/landing-header/landing-header";
-import WhyUsFlower from "../why-us-flower/why-us-flower";
+import WhyUsFlower from "./why-us-flower/why-us-flower";
 import classes from "./why-choose-us-section.module.scss";
 
 export default function WhyChooseUsSection() {

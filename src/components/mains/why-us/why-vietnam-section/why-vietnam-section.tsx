@@ -1,0 +1,140 @@
+"use client";
+
+import { Fragment, ReactNode } from "react";
+import Image from "next/image";
+import { Grid, GridCol, Stack, Text } from "@mantine/core";
+import classes from "./why-vietnam-section.module.scss";
+
+const ROWS: { label: string; content: ReactNode }[] = [
+  {
+    label: "Why Vietnam?",
+    content: "What makes Vietnam an attractive destination for businesses looking to enhance their IT capabilities and workforce?",
+  },
+  {
+    label: "Strong Tech Talent Pool",
+    content: (
+      <>
+        Vietnam boasts a rapidly growing tech workforce, with over{" "}
+        <span className={classes.highlight}>400,000 IT professionals</span> and{" "}
+        <span className={classes.highlight}>more than 50,000</span> new tech graduates each year,
+        making it a prime location for skilled IT professionals.
+      </>
+    ),
+  },
+  {
+    label: "Cost Effective",
+    content: (
+      <>
+        Hiring staff in Vietnam can lead to{" "}
+        <span className={classes.highlight}>significant cost savings</span>. Lower labour and living
+        costs and competitive salary expectations.
+      </>
+    ),
+  },
+  {
+    label: "Cultural Compatibility",
+    content: (
+      <>
+        The Vietnamese workforce is{" "}
+        <span className={classes.highlight}>highly proficient in English</span>, facilitating
+        seamless collaboration with international clients and remote teams.
+      </>
+    ),
+  },
+  {
+    label: "Supportive Regulatory Environment",
+    content: (
+      <>
+        Vietnam&apos;s Government has implemented incentives and investments to support the tech
+        industry, creating a favourable environment for{" "}
+        <span className={classes.highlight}>global tech collaboration</span>.
+      </>
+    ),
+  },
+  {
+    label: "Speed and Scalability",
+    content: (
+      <>
+        Experienced IT staffing partners leverage candidate databases and automated matching to
+        deliver pre-vetted candidates in days, not weeks.{" "}
+        <span className={classes.highlight}>Fast turnaround</span> helps scale teams quickly and
+        meet tight project deadlines.
+      </>
+    ),
+  },
+  {
+    label: "Flexible Staffing Solutions",
+    content: (
+      <>
+        Companies can leverage offshore staffing services to scale operations efficiently, with{" "}
+        <span className={classes.highlight}>flexible contracts</span> and the ability to ramp up or
+        down based on project needs.
+      </>
+    ),
+  },
+];
+
+const QUOTES: { quote: string; author: string }[] = [
+  {
+    quote:
+      "Vietnam is evolving from software outsourcing hub to high-tech manufacturing and regional data centre hub.",
+    author: "Reuters & Nikkei Asia",
+  },
+  {
+    quote:
+      "Cloud computing and AI to become core national industries.",
+    author: "World Bank – Vietnam Economic Update 2025",
+  },
+  {
+    quote:
+      "Vietnam ICT is the fastest growing market in the region.  Organisations will increasingly rely on cross-border talent to access and develop essential skills, driving by global economic factors and the need for skills-based workforces.   Organisations solving workforce capability first, will own competitive advantage  by 2030.",
+    author: "Deloitte – Talent Trends 2030",
+  },
+];
+
+export default function WhyVietnamSection() {
+  return (
+    <div className={classes.root}>
+      <div className={classes.backgroundStack}>
+        <div className={classes.baseBackground}>
+          <Image
+            src="/city-background.webp"
+            alt="City background"
+            fill
+            className={classes.backgroundImage}
+          />
+        </div>
+      </div>
+      <div className={classes.contentLayer}>
+        <Stack>
+          <Grid className={classes.grid} gutter="lg">
+            {ROWS.map((row, i) => (
+              <Fragment key={i}>
+                <GridCol span={4} className={classes.cellLeft}>
+                  <Text className={i === 0 ? classes.title : classes.subtitle}>
+                    {row.label}
+                  </Text>
+                </GridCol>
+                <GridCol span={8} className={classes.cellRight}>
+                  <div className={i === 0 ? undefined : classes.contentWrap}>
+                    <Text className={i === 0 ? classes.titleContent : classes.subtitleContent}>
+                      {row.content}
+                    </Text>
+                  </div>
+                </GridCol>
+              </Fragment>
+            ))}
+          </Grid>
+          <Stack gap="lg" className={classes.quotesStack}>
+            {QUOTES.map((q, i) => (
+              <Stack key={i} gap="xs" className={classes.quoteCard}>
+                <Text className={classes.quoteText}>&ldquo;{q.quote}&rdquo;</Text>
+                <Text className={classes.quoteAuthor}>— {q.author}</Text>
+              </Stack>
+            ))}
+          </Stack>
+        </Stack>
+      </div>
+    </div>
+  );
+}
