@@ -17,10 +17,11 @@ export default function LandingHeader() {
       </Link>
       {/* Desktop Nav */}
       <Flex className={classes.nav} gap="xl" visibleFrom="md">
+        <Link href={{ pathname: "/" }} className={classes.navItem}>Home</Link>
         <Link href={{ pathname: "/why-us" }} className={classes.navItem}>Why Us</Link>
         <Link href={{ pathname: "/our-solution" }} className={classes.navItem}>Solutions</Link>
         <Link href={{ pathname: "/contact-us" }} className={classes.navItem}>Contact Us</Link>
-        <Link href={{ pathname: "/blogs" }} className={classes.navItem}>Blogs</Link>
+        {/* <Link href={{ pathname: "/blogs" }} className={classes.navItem}>Blogs</Link> */}
       </Flex>
 
       {/* Mobile Drawer */}

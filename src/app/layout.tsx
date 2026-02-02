@@ -13,7 +13,7 @@ import './globals.scss';
 
 export const metadata: Metadata = {
   title: 'Elite Tech Talent',
-  description: 'Elite Tech Talent',
+  description: 'Your partner of choice for transformative IT staffing solutions. Connect with top-tier technology professionals who align with your business needs, values, and culture.',
   icons: {
     icon: '/favicon.ico',
   },

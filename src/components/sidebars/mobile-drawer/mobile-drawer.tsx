@@ -9,9 +9,9 @@ export function MobileDrawer() {
 
   const links = [
     { label: "Why Us", href: "/why-us" },
-    { label: "Solutions", href: "/solutions" },
+    { label: "Solutions", href: "/our-solution" },
     { label: "Contact Us", href: "/contact-us" },
-    { label: "Blogs", href: "/blogs" },
+    // { label: "Blogs", href: "/blogs" },
   ];
 
   return (
