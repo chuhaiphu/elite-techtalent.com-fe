@@ -1,7 +1,7 @@
 "use client";
 
 import { Fragment } from "react";
-import { Container, Grid, GridCol, Text, Badge, Tooltip, Group } from "@mantine/core";
+import { Container, Grid, GridCol, Text, Badge, Group, Popover, PopoverTarget } from "@mantine/core";
 import Image from "next/image";
 import classes from "./our-specialties-section.module.scss";
 
@@ -61,13 +61,13 @@ export default function OurSpecialtiesSection() {
           </p>
         </div>
 
-        <Grid className={classes.grid} gutter="lg" columns={12}>
+        <Grid className={classes.grid} gutter="lg" columns={12} align="center">
           {SPECIALTIES_DATA.map((item, i) => (
             <Fragment key={i}>
-              <GridCol span={{ base: 6, md: 4 }} className={classes.cellLeft}>
+              <GridCol span={{ base: 5, md: 4 }} className={classes.cellLeft}>
                 <Text className={classes.label}>{item.category}</Text>
               </GridCol>
-              <GridCol span={{ base: 6, md: 8 }} className={classes.cellRight}>
+              <GridCol span={{ base: 7, md: 8 }} className={classes.cellRight}>
                 <div className={classes.contentWrap}>
                   <Group gap="xs">
                     {item.core.map((tag) => (
@@ -82,26 +82,27 @@ export default function OurSpecialtiesSection() {
                         {tag}
                       </Badge>
                     ))}
-                    <Tooltip
-                      label={item.full} multiline w={300} withArrow
-                      styles={{
-                        tooltip: {
-                          fontSize: '1rem',
-                          lineHeight: '1.6',
-                        }
-                      }}
-                      transitionProps={{ transition: 'pop', duration: 200 }}
-                    >
-                      <Badge
-                        variant="outline" color="gray" radius="sm"
-                        classNames={{
-                          label: classes.moreBadgeLabel,
-                          root: classes.moreBadgeRoot,
-                        }}
-                      >
-                        + More
-                      </Badge>
-                    </Tooltip>
+                    <Popover width={300} position="bottom" withArrow shadow="md" trapFocus>
+                      <PopoverTarget>
+                        <Badge
+                          variant="outline"
+                          color="gray"
+                          radius="sm"
+                          className={classes.moreBadgeClickable}
+                          classNames={{
+                            label: classes.moreBadgeLabel,
+                            root: classes.moreBadgeRoot,
+                          }}
+                        >
+                          + More
+                        </Badge>
+                      </PopoverTarget>
+                      <Popover.Dropdown p="md">
+                        <Text size="sm" style={{ lineHeight: 1.6, color: '#333' }}>
+                          {item.full}
+                        </Text>
+                      </Popover.Dropdown>
+                    </Popover>
                   </Group>
                 </div>
               </GridCol>

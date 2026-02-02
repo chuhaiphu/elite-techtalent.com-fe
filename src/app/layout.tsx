@@ -12,11 +12,12 @@ import './globals.scss';
 
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://elite-techtalent.com'),
   title: 'Elite Tech Talent',
   description: 'Your partner of choice for transformative IT staffing solutions. Connect with top-tier technology professionals who align with your business needs, values, and culture.',
   icons: {
     icon: '/favicon.ico',
-  },
+  }
 };
 
 const acherusMilitant = localFont({

@@ -4,8 +4,8 @@
   justify-content: center;
 
   .circle {
-    width: clamp(15rem, 5vw, 20rem);
-    height: clamp(15rem, 5vw, 20rem);
+    width: clamp(10rem, 5vw, 20rem);
+    height: clamp(10rem, 5vw, 20rem);
     border-radius: 50%;
     background: radial-gradient(circle, #228be6 0%, #1864ab 100%);
     display: flex;
@@ -16,14 +16,14 @@
     border: 4px solid rgba(255, 255, 255, 0.1);
 
     .circleText {
-      font-size: clamp(2rem, 5vw, 2.5rem);
+      font-size: clamp(1.8rem, 4vw, 2rem);
     }
   }
 
   .itemsWrapper {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 1rem;
     position: relative;
 
     .itemRow {
@@ -36,11 +36,11 @@
 
       &:nth-child(2),
       &:nth-child(4) {
-        transform: translateX(35px);
+        transform: translateX(24px);
       }
 
       &:nth-child(3) {
-        transform: translateX(55px);
+        transform: translateX(48px);
       }
 
       .capsule {
@@ -51,7 +51,7 @@
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
         .capsuleText {
-          font-size: clamp(0.8rem, 2vw, 1.2rem);
+          font-size: clamp(0.7rem, 2vw, 1.2rem);
 
           &>span {
             font-size: inherit;

@@ -54,11 +54,8 @@
     .cellLeft {
       .label {
         min-height: 3rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         text-align: center;
-        font-size: clamp(0.6rem, 2.5vw, 1.2rem);
+        font-size: clamp(1rem, 2.5vw, 1.5rem);
         background: linear-gradient(90deg, #84a9ff 0%, #dfe9ff 55%, #f5f8ff 100%);
         border-radius: 1rem;
         padding: 0.5rem;
@@ -74,8 +71,7 @@
 
       .coreBadgeLabel,
       .moreBadgeLabel {
-        font-size: 1.2rem;
-        white-space: nowrap;
+        font-size: clamp(0.8rem, 2.5vw, 1.2rem);
       }
 
       .coreBadgeRoot {
@@ -91,6 +87,10 @@
           border-radius: 999px;
           background: rgba(245, 248, 255, 0.9);
         }
+      }
+
+      .moreBadgeClickable {
+        cursor: pointer;
       }
 
       .moreBadgeRoot {
