@@ -16,6 +16,7 @@ export default function OurSolutionsSection() {
             className={classes.backgroundImage}
           />
         </div>
+        <div className={classes.overlay} />
       </div>
       <Container size="xl" className={classes.contentContainer}>
         <LandingHeader />

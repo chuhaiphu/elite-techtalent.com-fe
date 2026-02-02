@@ -14,6 +14,7 @@ export default function LandingInfoContent() {
             className={classes.backgroundImage}
           />
         </div>
+        <div className={classes.overlay} />
       </div>
       <Container className={classes.contentContainer} size="xl">
         <Stack gap="xl">

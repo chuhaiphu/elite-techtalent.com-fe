@@ -2,7 +2,7 @@
 
 import { Fragment, ReactNode } from "react";
 import Image from "next/image";
-import { Grid, GridCol, Stack, Text } from "@mantine/core";
+import { Container, Grid, GridCol, Stack, Text } from "@mantine/core";
 import classes from "./why-vietnam-section.module.scss";
 
 const ROWS: { label: string; content: ReactNode }[] = [
@@ -106,34 +106,36 @@ export default function WhyVietnamSection() {
         </div>
       </div>
       <div className={classes.contentLayer}>
-        <Stack>
-          <Grid className={classes.grid} gutter="lg">
-            {ROWS.map((row, i) => (
-              <Fragment key={i}>
-                <GridCol span={4} className={classes.cellLeft}>
-                  <Text className={i === 0 ? classes.title : classes.subtitle}>
-                    {row.label}
-                  </Text>
-                </GridCol>
-                <GridCol span={8} className={classes.cellRight}>
-                  <div className={i === 0 ? undefined : classes.contentWrap}>
-                    <Text className={i === 0 ? classes.titleContent : classes.subtitleContent}>
-                      {row.content}
+        <Container size="xl" className={classes.contentContainer}>
+          <Stack>
+            <Grid className={classes.grid} gutter="lg">
+              {ROWS.map((row, i) => (
+                <Fragment key={i}>
+                  <GridCol span={4} className={classes.cellLeft}>
+                    <Text className={i === 0 ? classes.title : classes.subtitle}>
+                      {row.label}
                     </Text>
-                  </div>
-                </GridCol>
-              </Fragment>
-            ))}
-          </Grid>
-          <Stack gap="lg" className={classes.quotesStack}>
-            {QUOTES.map((q, i) => (
-              <Stack key={i} gap="xs" className={classes.quoteCard}>
-                <Text className={classes.quoteText}>&ldquo;{q.quote}&rdquo;</Text>
-                <Text className={classes.quoteAuthor}>— {q.author}</Text>
-              </Stack>
-            ))}
+                  </GridCol>
+                  <GridCol span={8} className={classes.cellRight}>
+                    <div className={i === 0 ? undefined : classes.contentWrap}>
+                      <Text className={i === 0 ? classes.titleContent : classes.subtitleContent}>
+                        {row.content}
+                      </Text>
+                    </div>
+                  </GridCol>
+                </Fragment>
+              ))}
+            </Grid>
+            <Stack gap="lg" className={classes.quotesStack}>
+              {QUOTES.map((q, i) => (
+                <Stack key={i} gap="xs" className={classes.quoteCard}>
+                  <Text className={classes.quoteText}>&ldquo;{q.quote}&rdquo;</Text>
+                  <Text className={classes.quoteAuthor}>— {q.author}</Text>
+                </Stack>
+              ))}
+            </Stack>
           </Stack>
-        </Stack>
+        </Container>
       </div>
     </div>
   );

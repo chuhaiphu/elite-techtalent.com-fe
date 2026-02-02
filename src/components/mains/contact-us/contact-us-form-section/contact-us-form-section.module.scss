@@ -1,0 +1,132 @@
+.sectionRoot {
+  position: relative;
+  width: 100%;
+  padding-block: 80px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+
+  .backgroundWrapper {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    .backgroundImage {
+      object-fit: cover;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(0.2rem);
+    }
+  }
+
+  .contentContainer {
+    position: relative;
+    z-index: 2;
+  }
+
+  .gridMain {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  .leftColumn {
+    // Nền trắng với opacity nhẹ theo ý bạn
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    padding: 60px 40px;
+    color: #1a1a1a;
+
+    .sectionTitle {
+      font-size: 3.5rem;
+      margin: 0;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .titleUnderline {
+      width: 70px;
+      height: 5px;
+      background-color: #1a3673;
+      margin-top: 10px;
+    }
+
+    .infoIcon {
+      color: #1a3673;
+    }
+
+    .infoLabel {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #000;
+    }
+
+    .infoValue {
+      font-size: 1rem;
+      color: #444;
+    }
+  }
+
+  .rightColumn {
+    // Nền xanh với opacity nhẹ để thấy building phía sau
+    background: rgba(26, 54, 115, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 60px 50px;
+    color: white;
+
+    .formTitle {
+      font-size: 2rem;
+      margin: 0;
+      font-weight: 500;
+    }
+
+    .formLabel {
+      color: white;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .formInput {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+      color: white;
+      font-size: 1.1rem;
+      padding: 10px 0;
+
+      &:focus {
+        border-bottom-color: #fff !important;
+      }
+    }
+
+    .submitButton {
+      background-color: #0d1b3e;
+      height: 60px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+
+      &:hover {
+        background-color: #08122a;
+      }
+    }
+  }
+}
+
+// Responsive điều chỉnh cho màn hình nhỏ
+@media (max-width: 768px) {
+  .gridMain {
+    margin-inline: 15px;
+  }
+
+  .leftColumn,
+  .rightColumn {
+    padding: 40px 20px;
+  }
+
+  .sectionTitle {
+    font-size: 2.5rem !important;
+  }
+}

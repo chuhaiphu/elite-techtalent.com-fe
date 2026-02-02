@@ -13,7 +13,7 @@ const PETALS = [
 
 export default function WhyUsFlower() {
   return (
-    <Flex align="center" justify="center" p={40}>
+    <Flex align="center" justify="center">
       <Flex
         align="center"
         justify="center"

@@ -10,7 +10,7 @@
 
       .sectionTitle {
         color: #284686;
-        font-size: 2.5rem;
+        font-size: clamp(2rem, 5vw, 3.5rem);
         width: fit-content;
       }
     }
@@ -20,8 +20,9 @@
         display: flex;
         flex-direction: column;
         gap: 0.75rem;
+        height: 100%;
 
-        .headerImageWrapper {
+        .cardImageWrapper {
           position: relative;
           width: 100%;
           aspect-ratio: 2/1;
@@ -32,6 +33,15 @@
             object-fit: cover;
             object-position: center;
           }
+        }
+
+        .cardContent {
+          padding: 0.75rem;
+          border-radius: 0.5rem;
+          background: linear-gradient(90deg, rgba(0, 50, 151, 0), #a6daff);
+          flex: 1;
+          display: flex;
+          flex-direction: column;
         }
 
         .headerContent {

@@ -1,0 +1,106 @@
+.root {
+  position: relative;
+  width: 100%;
+  padding-block: clamp(1.25rem, 3vw, 3rem);
+  overflow: hidden;
+
+  .backgroundStack {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    .baseBackground {
+      position: absolute;
+      inset: 0;
+    }
+
+    .backgroundImage {
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .contentContainer {
+    position: relative;
+    z-index: 2;
+  }
+
+  .headerBlock {
+    margin-bottom: 2rem;
+
+    .headerTitle {
+      color: white;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      width: fit-content;
+      margin: 0 0 0.5rem;
+    }
+
+    .subheaderTitle {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      line-height: 1.5;
+      color: white;
+      margin: 0;
+    }
+  }
+
+  .grid {
+    row-gap: 1.5rem;
+
+    .cellLeft,
+    .cellRight {
+      padding-bottom: 0.25rem;
+    }
+
+    .cellLeft {
+      .label {
+        min-height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: clamp(0.6rem, 2.5vw, 1.2rem);
+        background: linear-gradient(90deg, #84a9ff 0%, #dfe9ff 55%, #f5f8ff 100%);
+        border-radius: 1rem;
+        padding: 0.5rem;
+      }
+    }
+
+    .cellRight {
+      .contentWrap {
+        min-height: 3rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .coreBadgeLabel,
+      .moreBadgeLabel {
+        font-size: 1.2rem;
+        white-space: nowrap;
+      }
+
+      .coreBadgeRoot {
+        color: #f5f8ff;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+
+        &::before {
+          content: "";
+          width: 0.35rem;
+          height: 0.35rem;
+          border-radius: 999px;
+          background: rgba(245, 248, 255, 0.9);
+        }
+      }
+
+      .moreBadgeRoot {
+        border: 0;
+        color: #f5f8ff;
+        opacity: 0.85;
+        text-decoration: underline;
+        text-underline-offset: 0.22em;
+        text-decoration-color: rgba(245, 248, 255, 0.55);
+      }
+    }
+  }
+}

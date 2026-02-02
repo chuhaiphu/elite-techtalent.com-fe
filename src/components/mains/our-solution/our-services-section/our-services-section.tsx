@@ -95,7 +95,7 @@ export default function OurServicesSection() {
           {SERVICES.map((item, i) => (
             <GridCol key={i} span={{ base: 15, lg: 3 }}>
               <Stack className={classes.card}>
-                <div className={classes.headerImageWrapper}>
+                <div className={classes.cardImageWrapper}>
                   <Image
                     src={item.image}
                     alt=""
@@ -104,8 +104,10 @@ export default function OurServicesSection() {
                     sizes="(max-width: 1200px) 33vw, (max-width: 768px) 50vw, 20vw"
                   />
                 </div>
-                <Stack gap="xs" align="center" className={classes.headerContent}>{item.headerContent}</Stack>
-                <div className={classes.cardBody}>{item.paragraphContent}</div>
+                <Stack className={classes.cardContent}>
+                  <Stack gap="xs" align="center" className={classes.headerContent}>{item.headerContent}</Stack>
+                  <div className={classes.cardBody}>{item.paragraphContent}</div>
+                </Stack>
               </Stack>
             </GridCol>
           ))}

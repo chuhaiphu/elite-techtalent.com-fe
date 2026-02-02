@@ -23,6 +23,11 @@
   .contentLayer {
     position: relative;
     z-index: 2;
+
+    .contentContainer {
+      position: relative;
+      z-index: 2;
+    }
   }
 
   .grid {
@@ -53,7 +58,7 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-        font-size: clamp(0.6rem, 2.5vw, 1.2rem);
+        font-size: clamp(0.7rem, 2vw, 1.3rem);
         background: linear-gradient(180deg, #84a9ff, #f5f8ff);
         border-radius: 1rem;
         padding: 0.5rem;
@@ -71,15 +76,15 @@
         height: 6rem;
         display: flex;
         align-items: center;
-        font-size: clamp(0.7rem, 3vw, 1.5rem);
+        font-size: clamp(0.7rem, 2.5vw, 1.5rem);
         background: linear-gradient(180deg, #84a9ff, #f5f8ff);
         border-radius: 1rem;
-        padding: 0.75rem;
+        padding: clamp(0.5rem, 2.5vw, 0.75rem);
       }
 
       .subtitleContent {
         color: white;
-        font-size: clamp(0.5625rem, 1.8vw, 1rem);
+        font-size: clamp(0.6rem, 1.8vw, 1.2rem);
 
         span.highlight {
           font-size: inherit;
