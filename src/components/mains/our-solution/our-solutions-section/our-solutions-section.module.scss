@@ -1,0 +1,67 @@
+.sectionRoot {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 3rem;
+  
+  .backgroundStack {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    .baseBackground {
+      position: absolute;
+      inset: 0;
+    }
+
+    .backgroundImage {
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .contentContainer {
+    position: relative;
+    z-index: 2;
+  }
+
+  .textBlock {
+    width: 100%;
+
+    .sectionTitle {
+      color: white;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      width: fit-content;
+    }
+
+    .subtitle {
+      font-size: clamp(1.2rem, 2vw, 1.5rem);
+      line-height: 1.5;
+
+      &:first-child {
+        color: var(--elite-tech-talent-blue);
+      }
+
+      &:last-child {
+        color: var(--elite-tech-talent-red);
+      }
+    }
+
+    .paragraphsWrapper {
+      width: 0;
+      min-width: 100%;
+
+      .paragraph {
+        font-size: clamp(1.2rem, 2vw, 1.5rem);
+        line-height: 1.5;
+        color: white;
+
+        span {
+          color: var(--elite-tech-talent-red);
+          font-weight: bold;
+          font-size: inherit;
+        }
+      }
+    }
+  }
+}
