@@ -26,8 +26,10 @@ export default function LandingIntroContent() {
       <Container className={classes.textContentTop} size="xl">
         <Flex align="center" justify="center" h="100%">
           <Stack gap="md" align="center">
-            <h2>Your partner of choice for</h2>
-            <h2>Transformative IT staffing solutions</h2>
+            <h1 className={classes.mainTitle}>
+              Elite Tech Talent: Your partner of choice for
+            </h1>
+            <h2 className={classes.subTitle}>Transformative IT staffing solutions</h2>
           </Stack>
         </Flex>
       </Container>

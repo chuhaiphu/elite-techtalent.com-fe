@@ -19,7 +19,7 @@ export default function LandingHero() {
         <LandingHeader />
 
         <Stack className={classes.heroBody}>
-          <h1 className={classes.heroTitle}>Stay Ahead</h1>
+          <h2 className={classes.heroTitle}>Stay Ahead</h2>
           <p className={classes.heroEyebrow}>
             in a rapidly changing IT recruitment world
           </p>

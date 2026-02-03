@@ -34,7 +34,7 @@
     z-index: 2;
     height: 25%;
 
-    h2:first-child {
+    .mainTitle {
       color: var(--elite-tech-talent-blue);
       font-size: clamp(2rem, 5vw, 3rem);
     }

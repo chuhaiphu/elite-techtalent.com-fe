@@ -12,11 +12,67 @@ import {
   Text,
   Box,
 } from "@mantine/core";
+import { useForm } from "@mantine/form";
+import { notifications } from "@mantine/notifications";
 import { IoMail, IoCall, IoLocationSharp } from "react-icons/io5";
 import Image from "next/image";
+import { useTransition } from "react";
+import { sendContactEmailAction } from "@/actions/contact-actions";
 import classes from "./contact-us-form-section.module.scss";
 
+interface FormValues {
+  firstName: string;
+  lastName: string;
+  email: string;
+  contactNumber: string;
+  message: string;
+}
+
 export default function ContactUsFormSection() {
+  const [isPending, startTransition] = useTransition();
+
+  const form = useForm<FormValues>({
+    initialValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      contactNumber: "",
+      message: "",
+    },
+    validate: {
+      firstName: (value) => (value.trim().length < 1 ? "First name is required" : null),
+      // lastName: (value) => (value.trim().length < 1 ? "Last name is required" : null),
+      email: (value) => {
+        if (!value.trim()) return "Email is required";
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) return "Invalid email format";
+        return null;
+      },
+      contactNumber: (value) => (value.trim().length < 1 ? "Contact number is required" : null),
+      message: (value) => (value.trim().length < 1 ? "Message is required" : null),
+    },
+  });
+
+  const handleSubmit = async (values: FormValues) => {
+    startTransition(async () => {
+      const result = await sendContactEmailAction(values);
+
+      if (result.success) {
+        notifications.show({
+          title: "Success!",
+          message: "Your message has been sent. We'll get back to you soon.",
+          color: "green",
+        });
+        form.reset();
+      } else {
+        notifications.show({
+          title: "Error",
+          message: result.error || "Failed to send message. Please try again.",
+          color: "red",
+        });
+      }
+    });
+  };
+
   return (
     <section className={classes.sectionRoot}>
       {/* Background cố định phía sau */}
@@ -33,7 +89,7 @@ export default function ContactUsFormSection() {
       <Container size="xl" className={classes.contentContainer}>
         {/* Toàn bộ Grid nằm trên background với opacity */}
         <Grid className={classes.gridMain} gutter={0}>
-          
+
           {/* Cột bên trái: Thông tin (Nền trắng mờ) */}
           <GridCol span={{ base: 12, md: 4.5 }} className={classes.leftColumn}>
             <Stack className={classes.leftStack} gap={50}>
@@ -80,51 +136,67 @@ export default function ContactUsFormSection() {
             <Stack gap={30}>
               <h3 className={classes.formTitle}>Get in touch.</h3>
 
-              <div className={classes.formWrapper}>
-                <Grid gutter="xl">
-                  <GridCol span={{ base: 12, sm: 6 }}>
-                    <TextInput 
-                      label="First Name" 
-                      variant="unstyled" 
-                      classNames={{ input: classes.formInput, label: classes.formLabel }} 
-                    />
-                  </GridCol>
-                  <GridCol span={{ base: 12, sm: 6 }}>
-                    <TextInput 
-                      label="Last Name" 
-                      variant="unstyled" 
-                      classNames={{ input: classes.formInput, label: classes.formLabel }} 
-                    />
-                  </GridCol>
-                  <GridCol span={12}>
-                    <TextInput 
-                      label="Email Address" 
-                      variant="unstyled" 
-                      classNames={{ input: classes.formInput, label: classes.formLabel }} 
-                    />
-                  </GridCol>
-                  <GridCol span={12}>
-                    <TextInput 
-                      label="Contact number" 
-                      variant="unstyled" 
-                      classNames={{ input: classes.formInput, label: classes.formLabel }} 
-                    />
-                  </GridCol>
-                  <GridCol span={12}>
-                    <Textarea 
-                      label="Message" 
-                      variant="unstyled" 
-                      autosize
-                      minRows={1}
-                      classNames={{ input: classes.formInput, label: classes.formLabel }} 
-                    />
-                  </GridCol>
-                </Grid>
+              <form onSubmit={form.onSubmit(handleSubmit)}>
+                <div className={classes.formWrapper}>
+                  <Grid gutter="xl">
+                    <GridCol span={{ base: 12, sm: 6 }}>
+                      <TextInput
+                        label="First Name"
+                        variant="unstyled"
+                        classNames={{ input: classes.formInput, label: classes.formLabel }}
+                        {...form.getInputProps("firstName")}
+                      />
+                    </GridCol>
+                    <GridCol span={{ base: 12, sm: 6 }}>
+                      <TextInput
+                        label="Last Name"
+                        variant="unstyled"
+                        classNames={{ input: classes.formInput, label: classes.formLabel }}
+                        {...form.getInputProps("lastName")}
+                      />
+                    </GridCol>
+                    <GridCol span={12}>
+                      <TextInput
+                        label="Email Address"
+                        variant="unstyled"
+                        type="email"
+                        classNames={{ input: classes.formInput, label: classes.formLabel }}
+                        {...form.getInputProps("email")}
+                      />
+                    </GridCol>
+                    <GridCol span={12}>
+                      <TextInput
+                        label="Contact number"
+                        variant="unstyled"
+                        classNames={{ input: classes.formInput, label: classes.formLabel }}
+                        {...form.getInputProps("contactNumber")}
+                      />
+                    </GridCol>
+                    <GridCol span={12}>
+                      <Textarea
+                        label="Message"
+                        variant="unstyled"
+                        autosize
+                        minRows={1}
+                        classNames={{ input: classes.formInput, label: classes.formLabel }}
+                        {...form.getInputProps("message")}
+                      />
+                    </GridCol>
+                  </Grid>
 
-                <Button fullWidth size="xl" className={classes.submitButton} mt={40}>
-                  SUBMIT
-                </Button>
-              </div>
+                  <Button
+                    fullWidth
+                    size="xl"
+                    className={classes.submitButton}
+                    mt={40}
+                    type="submit"
+                    loading={isPending}
+                    disabled={isPending}
+                  >
+                    SUBMIT
+                  </Button>
+                </div>
+              </form>
             </Stack>
           </GridCol>
         </Grid>
