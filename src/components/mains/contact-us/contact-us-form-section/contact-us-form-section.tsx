@@ -18,6 +18,7 @@ import { IoMail, IoCall, IoLocationSharp } from "react-icons/io5";
 import Image from "next/image";
 import { useTransition } from "react";
 import { sendContactEmailAction } from "@/actions/contact-actions";
+import LandingHeader from "@/components/headers/landing-header/landing-header";
 import classes from "./contact-us-form-section.module.scss";
 
 interface FormValues {
@@ -87,10 +88,30 @@ export default function ContactUsFormSection() {
       </div>
 
       <Container size="xl" className={classes.contentContainer}>
-        {/* Toàn bộ Grid nằm trên background với opacity */}
-        <Grid className={classes.gridMain} gutter={0}>
+        <LandingHeader />
 
-          {/* Cột bên trái: Thông tin (Nền trắng mờ) */}
+        {/* Hero Section */}
+        <Stack className={classes.heroSection} gap="xl">
+          <h2 className={classes.heroTitle}>
+            Ready to transform your IT workforce?
+          </h2>
+          <Stack className={classes.paragraphsWrapper} gap="md">
+            <p className={classes.heroParagraph}>
+              Whether you are scaling up for a new project or looking for
+              ongoing support, our team is committed to delivering skilled
+              professionals tailored to your business needs – all while keeping
+              costs competitive and timelines tight.
+            </p>
+            <p className={classes.heroParagraph}>
+              Discover the difference that flexible, expert-led staffing
+              solutions can make for your organisation. Reach out to discuss
+              your needs, request a consultation, or learn more about our
+              services.
+            </p>
+          </Stack>
+        </Stack>
+
+        <Grid className={classes.gridMain} gutter={0}>
           <GridCol span={{ base: 12, md: 4.5 }} className={classes.leftColumn}>
             <Stack className={classes.leftStack} gap={50}>
               <Box>
@@ -131,7 +152,6 @@ export default function ContactUsFormSection() {
             </Stack>
           </GridCol>
 
-          {/* Cột bên phải: Form (Nền xanh mờ) */}
           <GridCol span={{ base: 12, md: 7.5 }} className={classes.rightColumn}>
             <Stack gap={30}>
               <h3 className={classes.formTitle}>Get in touch.</h3>

@@ -3,6 +3,9 @@
   min-height: 100vh;
   overflow: hidden;
   padding: clamp(1.25rem, 3vw, 2rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .backgroundStack {
     position: absolute;
@@ -23,7 +26,6 @@
 
   .contentLayer {
     position: relative;
-    z-index: 2;
 
     .contentContainer {
       position: relative;
@@ -37,7 +39,6 @@
 
   .title {
     font-family: var(--font-acherus), Arial, Helvetica, sans-serif;
-    // height: 6rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,8 +46,8 @@
     font-size: clamp(2rem, 5vw, 3.5rem);
     background: radial-gradient(circle at 0% 0%, #000000, #284686);
     color: white;
-    padding: 0 2rem;
-    border-radius: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
     font-weight: bold;
   }
 

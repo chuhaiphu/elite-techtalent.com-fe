@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Stack, Text, Box, Center, Flex, Container } from "@mantine/core";
 import { IoCheckmarkCircleOutline } from "react-icons/io5";
 import VersusIcon from "@/components/icon/versus.svg";

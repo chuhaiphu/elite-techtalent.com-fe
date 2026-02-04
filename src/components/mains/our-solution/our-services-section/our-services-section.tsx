@@ -68,7 +68,7 @@ const SERVICES: {
           </p>
           <ul className={classes.bodyList}>
             <li className={classes.bodyListItem}>End-to-end HR management: contracts, payroll, compliance</li>
-            <li className={classes.bodyListItem}>Reduce in house HR workload and legal risks</li>
+            <li className={classes.bodyListItem}>Reduce in-house HR workload and legal risks</li>
             <li className={classes.bodyListItem}>Customisable solutions for teams of all sizes</li>
           </ul>
         </>
