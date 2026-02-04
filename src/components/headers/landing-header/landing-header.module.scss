@@ -1,5 +1,5 @@
 .header {
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 
   .logoWrapper {
     position: relative;
@@ -9,6 +9,7 @@
 
   .nav {
     .navItem {
+      font-family: var(--font-acherus), Arial, Helvetica, sans-serif;
       font-size: 1.5rem;
       font-weight: 600;
       text-transform: uppercase;

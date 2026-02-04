@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import WhyChooseUsSection from "@/components/mains/why-us/why-choose-us-section/why-choose-us-section";
 import WhyUsVersusSection from "@/components/mains/why-us/why-us-versus-section/why-us-versus-section";
 import WhyVietnamSection from "@/components/mains/why-us/why-vietnam-section/why-vietnam-section";
+import styles from './page.module.scss';
 
 export const metadata: Metadata = {
   title: 'Why Choose Us - Elite Tech Talent',
@@ -11,8 +13,22 @@ export const metadata: Metadata = {
 export default function WhyChooseUsPage() {
   return (
     <>
-      <WhyChooseUsSection />
-      <WhyUsVersusSection />
+      <div className={styles.sharedBackgroundSection}>
+        <div className={styles.backgroundStack}>
+          <div className={styles.baseBackground}>
+            <Image
+              src="/general-background.webp"
+              alt="Background"
+              fill
+              className={styles.backgroundImage}
+            />
+          </div>
+        </div>
+        <div className={styles.contentWrapper}>
+          <WhyChooseUsSection />
+          <WhyUsVersusSection />
+        </div>
+      </div>
       <WhyVietnamSection />
     </>
   );

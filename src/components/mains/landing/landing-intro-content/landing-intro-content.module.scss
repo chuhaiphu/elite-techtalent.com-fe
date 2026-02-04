@@ -1,27 +1,14 @@
 .introContentRoot {
   position: relative;
   width: 100%;
-  height: 960px;
+  min-height: 100vh;
   overflow: hidden;
 
-  .backgroundStack {
+  .overlayBackground {
     position: absolute;
-    inset: 0; // cover the container
+    inset: 0;
+    filter: brightness(0.8);
     z-index: 1;
-
-    .baseBackground {
-      position: absolute;
-      inset: 0;
-    }
-
-    .overlayBackground {
-      position: absolute;
-      top: 25%; // leave 1/4 of the top
-      left: 0;
-      width: 100%;
-      height: 75%;
-      filter: brightness(0.8);
-    }
 
     .backgroundImage {
       object-fit: cover;
@@ -29,26 +16,11 @@
     }
   }
 
-  .textContentTop {
+  .textContent {
     position: relative;
     z-index: 2;
-    height: 25%;
-
-    .mainTitle {
-      color: var(--elite-tech-talent-blue);
-      font-size: clamp(2rem, 5vw, 3rem);
-    }
-
-    h2:last-child {
-      color: #ffffff;
-      font-size: clamp(2rem, 5vw, 3rem);
-    }
-  }
-
-  .textContentBottom {
-    position: relative;
-    z-index: 2;
-    height: 75%;
+    height: 100%;
+    padding-top: 2rem;
 
     p {
       color: black;
@@ -60,6 +32,7 @@
       }
 
       &.firstParagraph span {
+        font-family: var(--font-acherus), Arial, Helvetica, sans-serif;
         color: var(--elite-tech-talent-blue);
         font-weight: bold;
         font-size: 2rem;

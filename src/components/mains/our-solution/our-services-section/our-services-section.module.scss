@@ -1,16 +1,18 @@
 .sectionRoot {
   width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 
   .contentContainer {
-    padding-block: 3rem;
-
     .titleStack {
       width: 100%;
       margin-bottom: 2rem;
 
       .sectionTitle {
+        font-family: var(--font-acherus), Arial, Helvetica, sans-serif;
         color: #284686;
-        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-size: clamp(2.4rem, 6vw, 4.2rem);
         width: fit-content;
       }
     }
@@ -53,7 +55,7 @@
           .text {
             text-align: center;
             color: white;
-            font-size: 1rem;
+            font-size: 1.2rem;
           }
         }
 
@@ -63,7 +65,7 @@
 
           .bodyText,
           .bodyHighlight {
-            font-size: 1rem;
+            font-size: 1.2rem;
           }
 
           .bodyHighlight {
@@ -79,7 +81,7 @@
           .bodyListItem {
             position: relative;
             padding-left: 1rem;
-            font-size: 1rem;
+            font-size: 1.2rem;
 
             &::before {
               content: "";

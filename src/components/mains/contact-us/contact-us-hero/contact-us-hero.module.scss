@@ -1,6 +1,7 @@
 .sectionRoot {
   position: relative;
   width: 100%;
+  min-height: 100vh;
   overflow: hidden;
   padding-bottom: 3rem;
 
@@ -30,6 +31,7 @@
     width: 100%;
 
     .sectionTitle {
+      font-family: var(--font-acherus), Arial, Helvetica, sans-serif;
       color: white;
       font-size: clamp(2rem, 5vw, 3.5rem);
       padding: 2rem;

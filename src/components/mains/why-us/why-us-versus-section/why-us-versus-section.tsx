@@ -1,9 +1,11 @@
-import { Grid, GridCol, Stack, Text, Box, Center, ThemeIcon, Flex } from "@mantine/core";
-import { IoCheckmark } from "react-icons/io5";
+import Image from "next/image";
+import { Stack, Text, Box, Center, Flex, Container } from "@mantine/core";
+import { IoCheckmarkCircleOutline } from "react-icons/io5";
 import VersusIcon from "@/components/icon/versus.svg";
 import classes from "./why-us-versus-section.module.scss";
+import type { ReactNode } from "react";
 
-const comparisonData = [
+const comparisonData: { category: string; left: ReactNode; right: string }[] = [
   {
     category: "Quality",
     left: "Rigorous technical screening",
@@ -11,7 +13,7 @@ const comparisonData = [
   },
   {
     category: "Speed",
-    left: "Curated shortlist in 1–2 weeks",
+    left: <>Curated shortlist in <span className="highlight">1–2 weeks</span></>,
     right: "Long pipelines & back-and-forth",
   },
   {
@@ -26,67 +28,57 @@ const comparisonData = [
   },
   {
     category: "Risk",
-    left: "Consistent quality bar + backup options",
+    left: <>Consistent quality bar + <span className="highlight">backup</span> options</>,
     right: "Inconsistent outcomes",
   },
 ];
 
 export default function WhyUsVersusSection() {
   return (
-    <Stack className={classes.root}>
-      <Stack className={classes.header}>
-        <Text className={classes.headerTitle} ta="center">
-          Every week a role stays open costs you speed, revenue, and momentum.
-        </Text>
-        <Text className={classes.headerSubtitle} ta="center">
-          Partner with us to hire faster, spend less, and build stronger teams—without compromise.
-        </Text>
-      </Stack>
+    <div className={classes.root}>
+      <Stack className={classes.contentContainer}>
+        <Stack className={classes.header}>
+          <Text className={classes.headerTitle} ta="center">
+            Every week a role stays open costs you speed, revenue, and momentum.
+          </Text>
+          <Text className={classes.headerSubtitle} ta="center">
+            Partner with us to hire faster, spend less, and build stronger teams—without compromise.
+          </Text>
+        </Stack>
 
-      <Box className={classes.contentWrap}>
-        <Grid columns={12} mb="lg" align="center">
-          <GridCol span={5}>
+        <Box className={classes.contentWrap}>
+          <Flex className={classes.headerRow} align="center" justify="center" mb="lg">
             <Text className={classes.brandLeft}>
               Elite Tech <span>Talent</span>
             </Text>
-          </GridCol>
-          <GridCol span={2}>
             <Center className={classes.versusIconWrap}>
               <VersusIcon width={64} height={64} aria-label="VS" />
             </Center>
-          </GridCol>
-          <GridCol span={5}>
             <Text className={classes.headerRight}>Typical IT HR Solutions</Text>
-          </GridCol>
-        </Grid>
+          </Flex>
 
-        <Stack gap="sm">
-          {comparisonData.map((item, index) => (
-            <Grid key={index} columns={12} align="center">
-              <GridCol span={5}>
-                <Flex align="center" justify="flex-end" gap="0.5rem">
-                  <Text className={classes.itemLeftText} ta="right">{item.left}</Text>
-                  <ThemeIcon className={classes.checkIcon} size={24} radius="xl" variant="outline" color="blue">
-                    <IoCheckmark size={14} />
-                  </ThemeIcon>
-                </Flex>
-              </GridCol>
-              <GridCol span={2}>
-                <Center>
+          <Container size="lg" className={classes.comparisonContainer}>
+            <Stack gap="xl">
+              {comparisonData.map((item, index) => (
+                <Box key={index} className={classes.comparisonRow}>
+                  <Flex className={classes.leftContent} align="center" justify="flex-start" gap="xs">
+                    <IoCheckmarkCircleOutline className={classes.checkIcon} size={64} />
+                    <Text className={classes.itemLeftText} ta="left">{item.left}</Text>
+                  </Flex>
                   <Box className={classes.categoryPill}>
                     <Text className={classes.categoryLabel}>{item.category}</Text>
                   </Box>
-                </Center>
-              </GridCol>
-              <GridCol span={5}>
-                <Text className={classes.itemRightText} ta="left" c="dimmed">
-                  {item.right}
-                </Text>
-              </GridCol>
-            </Grid>
-          ))}
-        </Stack>
-      </Box>
-    </Stack>
+                  <Flex className={classes.rightContent} align="center" justify="flex-end">
+                    <Text className={classes.itemRightText} ta="right">
+                      {item.right}
+                    </Text>
+                  </Flex>
+                </Box>
+              ))}
+            </Stack>
+          </Container>
+        </Box>
+      </Stack>
+    </div>
   );
 }

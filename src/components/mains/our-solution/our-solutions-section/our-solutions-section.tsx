@@ -1,5 +1,4 @@
 import LandingHeader from "@/components/headers/landing-header/landing-header";
-import { WeOfferBranch } from "@/components/mains/our-solution/our-solutions-section/we-offer-branch/we-offer-branch";
 import { Container, Grid, GridCol, Stack } from "@mantine/core";
 import Image from "next/image";
 import classes from "./our-solutions-section.module.scss";
@@ -20,8 +19,8 @@ export default function OurSolutionsSection() {
       </div>
       <Container size="xl" className={classes.contentContainer}>
         <LandingHeader />
-        <Grid>
-          <GridCol span={{ base: 12, md: 6 }}>
+        <Grid align="center">
+          <GridCol span={{ base: 12, md: 5 }}>
             <Stack className={classes.textBlock}>
               <h2 className={classes.sectionTitle}>Our Solutions</h2>
               <Stack>
@@ -39,8 +38,15 @@ export default function OurSolutionsSection() {
               </Stack>
             </Stack>
           </GridCol>
-          <GridCol span={{ base: 12, md: 6 }}>
-            <WeOfferBranch />
+          <GridCol span={{ base: 12, md: 7 }}>
+            <div className={classes.branchesSectionWrapper}>
+              <Image
+                src="/we-offer-branch-section.png"
+                alt="Branches Background"
+                fill
+                className={classes.branchesSectionImage}
+              />
+            </div>
           </GridCol>
         </Grid>
       </Container>

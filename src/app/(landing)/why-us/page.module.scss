@@ -1,0 +1,36 @@
+.sharedBackgroundSection {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+
+  .backgroundStack {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    .baseBackground {
+      position: absolute;
+      inset: 0;
+    }
+
+    .backgroundImage {
+      object-fit: cover;
+      object-position: center;
+    }
+
+    // Dark overlay to make background darker
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 1;
+    }
+  }
+
+  .contentWrapper {
+    position: relative;
+    z-index: 2;
+  }
+}

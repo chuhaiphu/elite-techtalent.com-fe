@@ -5,11 +5,8 @@ import Image from "next/image";
 import { Container, Grid, GridCol, Stack, Text } from "@mantine/core";
 import classes from "./why-vietnam-section.module.scss";
 
+// Chỉ giữ lại các subtitle items
 const ROWS: { label: string; content: ReactNode }[] = [
-  {
-    label: "Why Vietnam?",
-    content: "What makes Vietnam an attractive destination for businesses looking to enhance their IT capabilities and workforce?",
-  },
   {
     label: "Strong Tech Talent Pool",
     content: (
@@ -50,44 +47,20 @@ const ROWS: { label: string; content: ReactNode }[] = [
         <span className={classes.highlight}>global tech collaboration</span>.
       </>
     ),
-  },
-  {
-    label: "Speed and Scalability",
-    content: (
-      <>
-        Experienced IT staffing partners leverage candidate databases and automated matching to
-        deliver pre-vetted candidates in days, not weeks.{" "}
-        <span className={classes.highlight}>Fast turnaround</span> helps scale teams quickly and
-        meet tight project deadlines.
-      </>
-    ),
-  },
-  {
-    label: "Flexible Staffing Solutions",
-    content: (
-      <>
-        Companies can leverage offshore staffing services to scale operations efficiently, with{" "}
-        <span className={classes.highlight}>flexible contracts</span> and the ability to ramp up or
-        down based on project needs.
-      </>
-    ),
-  },
+  }
 ];
 
-const QUOTES: { quote: string; author: string }[] = [
+const QUOTES = [
   {
-    quote:
-      "Vietnam is evolving from software outsourcing hub to high-tech manufacturing and regional data centre hub.",
+    quote: "Vietnam is evolving from software outsourcing hub to high-tech manufacturing and regional data centre hub.",
     author: "Reuters & Nikkei Asia",
   },
   {
-    quote:
-      "Cloud computing and AI to become core national industries.",
+    quote: "Cloud computing and AI to become core national industries.",
     author: "World Bank – Vietnam Economic Update 2025",
   },
   {
-    quote:
-      "Vietnam ICT is the fastest growing market in the region.  Organisations will increasingly rely on cross-border talent to access and develop essential skills, driving by global economic factors and the need for skills-based workforces.   Organisations solving workforce capability first, will own competitive advantage  by 2030.",
+    quote: "Vietnam ICT is the fastest growing market in the region. Organisations solving workforce capability first, will own competitive advantage by 2030.",
     author: "Deloitte – Talent Trends 2030",
   },
 ];
@@ -105,28 +78,14 @@ export default function WhyVietnamSection() {
           />
         </div>
       </div>
+
       <div className={classes.contentLayer}>
         <Container size="xl" className={classes.contentContainer}>
-          <Stack>
-            <Grid className={classes.grid} gutter="lg">
-              {ROWS.map((row, i) => (
-                <Fragment key={i}>
-                  <GridCol span={4} className={classes.cellLeft}>
-                    <Text className={i === 0 ? classes.title : classes.subtitle}>
-                      {row.label}
-                    </Text>
-                  </GridCol>
-                  <GridCol span={8} className={classes.cellRight}>
-                    <div className={i === 0 ? undefined : classes.contentWrap}>
-                      <Text className={i === 0 ? classes.titleContent : classes.subtitleContent}>
-                        {row.content}
-                      </Text>
-                    </div>
-                  </GridCol>
-                </Fragment>
-              ))}
-            </Grid>
-            <Stack gap="lg" className={classes.quotesStack}>
+          <Stack gap="xl">
+            <div className={classes.titleWrapper}>
+              <Text className={classes.title}>Why Vietnam?</Text>
+            </div>
+            <Stack gap="xs" className={classes.quotesStack}>
               {QUOTES.map((q, i) => (
                 <Stack key={i} gap="xs" className={classes.quoteCard}>
                   <Text className={classes.quoteText}>&ldquo;{q.quote}&rdquo;</Text>
@@ -134,6 +93,22 @@ export default function WhyVietnamSection() {
                 </Stack>
               ))}
             </Stack>
+            <Grid className={classes.grid} gutter="lg" columns={12} align="center">
+              {ROWS.map((row, i) => (
+                <Fragment key={i}>
+                  <GridCol span={{ base: 5, md: 4 }} className={classes.cellLeft}>
+                    <Text className={classes.subtitle}>{row.label}</Text>
+                  </GridCol>
+                  <GridCol span={{ base: 7, md: 8 }} className={classes.cellRight}>
+                    <div className={classes.contentWrap}>
+                      <Text className={classes.subtitleContent}>
+                        {row.content}
+                      </Text>
+                    </div>
+                  </GridCol>
+                </Fragment>
+              ))}
+            </Grid>
           </Stack>
         </Container>
       </div>

@@ -1,5 +1,6 @@
 .root {
   position: relative;
+  min-height: 100vh;
   overflow: hidden;
   padding: clamp(1.25rem, 3vw, 2rem);
 
@@ -30,35 +31,42 @@
     }
   }
 
+  .titleWrapper {
+    width: fit-content;
+  }
+
+  .title {
+    font-family: var(--font-acherus), Arial, Helvetica, sans-serif;
+    // height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    background: radial-gradient(circle at 0% 0%, #000000, #284686);
+    color: white;
+    padding: 0 2rem;
+    border-radius: 1rem;
+    font-weight: bold;
+  }
+
   .grid {
-    row-gap: 5rem;
 
     .cellLeft,
     .cellRight {
-      padding-bottom: clamp(0.5rem, 3vw, 2rem);
+      padding-bottom: 1rem;
+      padding-top: 1rem;
     }
 
     .cellLeft {
-      .title {
-        height: 6rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        font-size: clamp(0.75rem, 4vw, 2.5rem);
-        background: radial-gradient(circle at 0% 0%, #000000, #284686);
-        color: white;
-        padding: 0.5rem;
-        border-radius: 1rem;
-      }
-
       .subtitle {
-        height: 3rem;
+        min-height: 3rem;
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
         font-size: clamp(0.7rem, 2vw, 1.3rem);
+        font-weight: bold;
         background: linear-gradient(180deg, #84a9ff, #f5f8ff);
         border-radius: 1rem;
         padding: 0.5rem;
@@ -70,16 +78,6 @@
         min-height: 3rem;
         display: flex;
         align-items: center;
-      }
-
-      .titleContent {
-        height: 6rem;
-        display: flex;
-        align-items: center;
-        font-size: clamp(0.7rem, 2.5vw, 1.5rem);
-        background: linear-gradient(180deg, #84a9ff, #f5f8ff);
-        border-radius: 1rem;
-        padding: clamp(0.5rem, 2.5vw, 0.75rem);
       }
 
       .subtitleContent {
@@ -96,25 +94,24 @@
   }
 
   .quotesStack {
-    margin-top: 2rem;
+    border: 1px solid color-mix(in srgb, var(--elite-tech-talent-red) 60%, transparent);
+    background: color-mix(in srgb, var(--elite-tech-talent-red) 30%, transparent);
+    border-radius: 0.75rem;
 
     .quoteCard {
       padding: 0.75rem 1rem;
-      border-radius: 0.75rem;
-      border: 1px solid color-mix(in srgb, var(--elite-tech-talent-red) 60%, transparent);
-      background: color-mix(in srgb, var(--elite-tech-talent-red) 30%, transparent);
     }
 
     .quoteText {
       color: white;
-      font-size: clamp(0.75rem, 2vw, 1rem);
+      font-size: clamp(0.825rem, 2.2vw, 1.1rem);
       font-style: italic;
       line-height: 1.5;
     }
 
     .quoteAuthor {
       color: rgba(255, 255, 255, 0.85);
-      font-size: clamp(0.65rem, 1.5vw, 0.9rem);
+      font-size: clamp(0.715rem, 1.65vw, 0.99rem);
     }
   }
 }

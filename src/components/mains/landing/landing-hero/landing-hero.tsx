@@ -19,10 +19,20 @@ export default function LandingHero() {
         <LandingHeader />
 
         <Stack className={classes.heroBody}>
-          <h2 className={classes.heroTitle}>Stay Ahead</h2>
-          <p className={classes.heroEyebrow}>
-            in a rapidly changing IT recruitment world
-          </p>
+          <div className={classes.heroTopGroup}>
+            <h2 className={classes.heroTitle}>Stay Ahead</h2>
+            <p className={classes.heroEyebrow}>
+              in a rapidly changing digital world
+            </p>
+          </div>
+          <div className={classes.heroBottomGroup}>
+            <h3 className={classes.heroSubtitle}>
+              Elite Tech Talent
+            </h3>
+            <h4 className={classes.heroTagline}>
+              Your partner of choice for transformative IT staffing solutions
+            </h4>
+          </div>
         </Stack>
       </Container>
     </section>

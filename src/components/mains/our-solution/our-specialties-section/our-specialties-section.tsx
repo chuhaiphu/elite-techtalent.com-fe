@@ -84,18 +84,9 @@ export default function OurSpecialtiesSection() {
                     ))}
                     <Popover width={300} position="bottom" withArrow shadow="md" trapFocus>
                       <PopoverTarget>
-                        <Badge
-                          variant="outline"
-                          color="gray"
-                          radius="sm"
-                          className={classes.moreBadgeClickable}
-                          classNames={{
-                            label: classes.moreBadgeLabel,
-                            root: classes.moreBadgeRoot,
-                          }}
-                        >
-                          + More
-                        </Badge>
+                        <Text className={classes.moreBadgeText}>
+                          + MORE
+                        </Text>
                       </PopoverTarget>
                       <Popover.Dropdown p="md">
                         <Text size="sm" style={{ lineHeight: 1.6, color: '#333' }}>

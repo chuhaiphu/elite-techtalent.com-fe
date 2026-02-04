@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+import { Open_Sans } from 'next/font/google';
 import '@mantine/core/styles.css';
 import '@mantine/dates/styles.css';
 import '@mantine/notifications/styles.css';
@@ -27,6 +28,13 @@ export const metadata: Metadata = {
 
 const acherusMilitant = localFont({
   src: '../../public/fonts/Acherus Militant 1.woff2',
+  variable: '--font-acherus',
+});
+
+const openSans = Open_Sans({
+  subsets: ['latin', 'vietnamese'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-open-sans',
 });
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -48,7 +56,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     ],
     contentUrl: 'https://elite-techtalent.com/header-background-video.mp4',
     embedUrl: 'https://elite-techtalent.com/',
-    uploadDate: '2026-02-01',
+    uploadDate: '2026-02-01T00:00:00Z',
   };
 
   return (
@@ -58,7 +66,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoJsonLd) }} />
       </head>
-      <body className={`${acherusMilitant.className} antialiased`}>
+      <body className={`${acherusMilitant.variable} ${openSans.variable} antialiased`}>
         <MantineConfigProvider>{children}</MantineConfigProvider>
       </body>
     </html>

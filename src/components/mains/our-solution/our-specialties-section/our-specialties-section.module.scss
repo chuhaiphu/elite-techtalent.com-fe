@@ -1,8 +1,11 @@
 .root {
   position: relative;
   width: 100%;
+  min-height: 100vh;
   padding-block: clamp(1.25rem, 3vw, 3rem);
   overflow: hidden;
+  display: flex;
+  align-items: center;
 
   .backgroundStack {
     position: absolute;
@@ -29,14 +32,15 @@
     margin-bottom: 2rem;
 
     .headerTitle {
+      font-family: var(--font-acherus), Arial, Helvetica, sans-serif;
       color: white;
-      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
       width: fit-content;
       margin: 0 0 0.5rem;
     }
 
     .subheaderTitle {
-      font-size: clamp(1rem, 2vw, 1.25rem);
+      font-size: clamp(1.2rem, 2.4vw, 1.5rem);
       line-height: 1.5;
       color: white;
       margin: 0;
@@ -69,8 +73,7 @@
         align-items: center;
       }
 
-      .coreBadgeLabel,
-      .moreBadgeLabel {
+      .coreBadgeLabel {
         font-size: clamp(0.8rem, 2.5vw, 1.2rem);
       }
 
@@ -93,13 +96,14 @@
         cursor: pointer;
       }
 
-      .moreBadgeRoot {
-        border: 0;
-        color: #f5f8ff;
-        opacity: 0.85;
+      .moreBadgeText {
+        color: white;
+        font-size: clamp(0.8rem, 2.5vw, 1.2rem);
         text-decoration: underline;
         text-underline-offset: 0.22em;
-        text-decoration-color: rgba(245, 248, 255, 0.55);
+        text-decoration-color: rgba(255, 255, 255, 0.7);
+        cursor: pointer;
+        display: inline-block;
       }
     }
   }
