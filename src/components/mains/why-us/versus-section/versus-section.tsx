@@ -1,7 +1,7 @@
 import { Stack, Text, Box, Center, Flex, Container } from "@mantine/core";
 import { IoCheckmarkCircleOutline } from "react-icons/io5";
 import VersusIcon from "@/components/icon/versus.svg";
-import classes from "./why-us-versus-section.module.scss";
+import classes from "./versus-section.module.scss";
 import type { ReactNode } from "react";
 
 const comparisonData: { category: string; left: ReactNode; right: string }[] = [
@@ -32,7 +32,7 @@ const comparisonData: { category: string; left: ReactNode; right: string }[] = [
   },
 ];
 
-export default function WhyUsVersusSection() {
+export default function VersusSection() {
   return (
     <div className={classes.root}>
       <Stack className={classes.contentContainer}>

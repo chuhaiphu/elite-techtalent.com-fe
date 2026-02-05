@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import WhyChooseUsSection from "@/components/mains/why-us/why-choose-us-section/why-choose-us-section";
-import WhyUsVersusSection from "@/components/mains/why-us/why-us-versus-section/why-us-versus-section";
+import VersusSection from "@/components/mains/why-us/versus-section/versus-section";
 import WhyVietnamSection from "@/components/mains/why-us/why-vietnam-section/why-vietnam-section";
 import styles from './page.module.scss';
 
@@ -26,7 +26,7 @@ export default function WhyChooseUsPage() {
         </div>
         <div className={styles.contentWrapper}>
           <WhyChooseUsSection />
-          <WhyUsVersusSection />
+          <VersusSection />
         </div>
       </div>
       <WhyVietnamSection />

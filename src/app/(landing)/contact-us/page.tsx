@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import ContactUsFormSection from "@/components/mains/contact-us/contact-us-form-section/contact-us-form-section";
+import ContactUsSection from "@/components/mains/contact-us/contact-us-section/contact-us-section";
 
 export const metadata: Metadata = {
   title: 'Contact Us - Elite Tech Talent',
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function ContactUsPage() {
   return (
-    <ContactUsFormSection />
+    <ContactUsSection />
   );
 }
 

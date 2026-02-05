@@ -19,7 +19,7 @@ import Image from "next/image";
 import { useTransition } from "react";
 import { sendContactEmailAction } from "@/actions/contact-actions";
 import LandingHeader from "@/components/headers/landing-header/landing-header";
-import classes from "./contact-us-form-section.module.scss";
+import classes from "./contact-us-section.module.scss";
 
 interface FormValues {
   firstName: string;
@@ -29,7 +29,7 @@ interface FormValues {
   message: string;
 }
 
-export default function ContactUsFormSection() {
+export default function ContactUsSection() {
   const [isPending, startTransition] = useTransition();
 
   const form = useForm<FormValues>({
