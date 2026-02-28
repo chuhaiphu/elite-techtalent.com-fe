@@ -11,23 +11,23 @@ import './globals.scss';
 export const metadata: Metadata = {
   metadataBase: new URL('https://elite-techtalent.com'),
   title: 'Elite Tech Talent',
-  description: 'Your partner of choice for transformative IT staffing solutions. Connect with top-tier technology professionals who align with your business needs, values, and culture.',
+  description:
+    'Your partner of choice for transformative IT staffing solutions. Connect with top-tier technology professionals who align with your business needs, values, and culture.',
   icons: {
     icon: '/favicon.ico',
   },
   openGraph: {
     title: 'Elite Tech Talent',
-    description: 'Your partner of choice for transformative IT staffing solutions. Connect with top-tier technology professionals who align with your business needs, values, and culture.',
+    description:
+      'Your partner of choice for transformative IT staffing solutions. Connect with top-tier technology professionals who align with your business needs, values, and culture.',
     url: 'https://elite-techtalent.com',
     siteName: 'Elite Tech Talent',
-    images: [
-      { url: 'https://elite-techtalent.com/logo-with-text.webp' },
-    ],
+    images: [{ url: 'https://elite-techtalent.com/logo-with-text.webp' }],
   },
 };
 
 const acherusMilitant = localFont({
-  src: '../../public/fonts/Acherus Militant 1.woff2',
+  src: '../fonts/AcherusMilitant.woff2',
   variable: '--font-acherus',
 });
 
@@ -37,7 +37,9 @@ const openSans = Open_Sans({
   variable: '--font-open-sans',
 });
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -63,10 +65,18 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en" {...mantineHtmlProps}>
       <head>
         <ColorSchemeScript />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoJsonLd) }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(videoJsonLd) }}
+        />
       </head>
-      <body className={`${acherusMilitant.variable} ${openSans.variable} antialiased`}>
+      <body
+        className={`${acherusMilitant.variable} ${openSans.variable} antialiased`}
+      >
         <MantineConfigProvider>{children}</MantineConfigProvider>
       </body>
     </html>
