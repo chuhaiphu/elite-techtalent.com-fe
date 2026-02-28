@@ -1,7 +1,7 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  output: "standalone",
+  output: 'standalone',
   cacheComponents: true,
   reactCompiler: true,
   devIndicators: {
@@ -9,8 +9,11 @@ const nextConfig: NextConfig = {
   },
   typedRoutes: true,
   images: {
-    remotePatterns: [
-      { protocol: 'https', hostname: 'res.cloudinary.com' },
+    remotePatterns: [{ protocol: 'https', hostname: 'res.cloudinary.com' }],
+    localPatterns: [
+      {
+        pathname: '/**',
+      },
     ],
   },
   turbopack: {
@@ -24,7 +27,7 @@ const nextConfig: NextConfig = {
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
-      use: ['@svgr/webpack']
+      use: ['@svgr/webpack'],
     });
     return config;
   },
