@@ -22,7 +22,7 @@ export const metadata: Metadata = {
       'Your partner of choice for transformative IT staffing solutions. Connect with top-tier technology professionals who align with your business needs, values, and culture.',
     url: 'https://elite-techtalent.com',
     siteName: 'Elite Tech Talent',
-    images: [{ url: 'https://elite-techtalent.com/logo-with-text.webp' }],
+    images: [{ url: 'https://elite-techtalent.com/images/logo-with-text.webp' }],
   },
 };
 
@@ -45,7 +45,7 @@ export default function RootLayout({
     '@type': 'Organization',
     name: 'Elite Tech Talent',
     url: 'https://elite-techtalent.com',
-    logo: 'https://elite-techtalent.com/logo-with-text.webp',
+    logo: 'https://elite-techtalent.com/images/logo-with-text.webp',
   };
 
   const videoJsonLd = {
@@ -54,9 +54,9 @@ export default function RootLayout({
     name: 'Elite Tech Talent Header Background',
     description: 'Hero background video on Elite Tech Talent homepage.',
     thumbnailUrl: [
-      'https://elite-techtalent.com/header-background-video-thumbnail.png',
+      'https://elite-techtalent.com/images/header-background-video-thumbnail.png',
     ],
-    contentUrl: 'https://elite-techtalent.com/header-background-video.mp4',
+    contentUrl: 'https://elite-techtalent.com/images/header-background-video.mp4',
     embedUrl: 'https://elite-techtalent.com/',
     uploadDate: '2026-02-01T00:00:00Z',
   };

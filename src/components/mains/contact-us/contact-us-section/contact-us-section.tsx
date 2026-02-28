@@ -10,7 +10,7 @@ export default function ContactUsSection() {
     <section className={classes.sectionRoot}>
       <div className={classes.backgroundWrapper}>
         <Image
-          src="/building-background.webp"
+          src="/images/building-background.webp"
           alt="Background"
           fill
           className={classes.backgroundImage}

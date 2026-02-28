@@ -1,18 +1,12 @@
-import { Container, Stack } from "@mantine/core";
-import classes from "./landing-hero.module.scss";
-import LandingHeader from "../../../headers/landing-header/landing-header";
+import { Container, Stack } from '@mantine/core';
+import classes from './landing-hero.module.scss';
+import LandingHeader from '../../../headers/landing-header/landing-header';
 
 export default function LandingHero() {
   return (
     <section className={classes.heroRoot}>
-      <video
-        className={classes.heroVideo}
-        autoPlay
-        muted
-        loop
-        playsInline
-      >
-        <source src="/header-background-video.mp4" type="video/mp4" />
+      <video className={classes.heroVideo} autoPlay muted loop playsInline>
+        <source src="/images/header-background-video.mp4" type="video/mp4" />
       </video>
       <div className={classes.heroOverlay}></div>
       <Container className={classes.heroContainer} size="xl">
@@ -26,9 +20,7 @@ export default function LandingHero() {
             </p>
           </div>
           <div className={classes.heroBottomGroup}>
-            <h3 className={classes.heroSubtitle}>
-              Elite Tech Talent
-            </h3>
+            <h3 className={classes.heroSubtitle}>Elite Tech Talent</h3>
             <h4 className={classes.heroTagline}>
               Your partner of choice for transformative IT staffing solutions
             </h4>

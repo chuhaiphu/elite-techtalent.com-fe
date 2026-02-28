@@ -1,7 +1,7 @@
-import LandingHeader from "@/components/headers/landing-header/landing-header";
-import { Container, Grid, GridCol, Stack } from "@mantine/core";
-import Image from "next/image";
-import classes from "./our-solutions-section.module.scss";
+import LandingHeader from '@/components/headers/landing-header/landing-header';
+import { Container, Grid, GridCol, Stack } from '@mantine/core';
+import Image from 'next/image';
+import classes from './our-solutions-section.module.scss';
 
 export default function OurSolutionsSection() {
   return (
@@ -9,7 +9,7 @@ export default function OurSolutionsSection() {
       <div className={classes.backgroundStack}>
         <div className={classes.baseBackground}>
           <Image
-            src="/general-background.webp"
+            src="/images/general-background.webp"
             alt="Background"
             fill
             className={classes.backgroundImage}
@@ -24,16 +24,14 @@ export default function OurSolutionsSection() {
             <Stack className={classes.textBlock}>
               <h2 className={classes.sectionTitle}>Our Solutions</h2>
               <Stack>
-                <p className={classes.subtitle}>
-                  We don’t just fill roles
-                </p>
-                <p className={classes.subtitle}>
-                  WE BUILD PARTNERSHIPS
-                </p>
+                <p className={classes.subtitle}>We don’t just fill roles</p>
+                <p className={classes.subtitle}>WE BUILD PARTNERSHIPS</p>
               </Stack>
               <Stack className={classes.paragraphsWrapper}>
                 <p className={classes.paragraph}>
-                  Our clients rely on us for strategic staffing support, rapid response times, and a personalised approach that aligns with their goals and culture.
+                  Our clients rely on us for strategic staffing support, rapid
+                  response times, and a personalised approach that aligns with their
+                  goals and culture.
                 </p>
               </Stack>
             </Stack>
@@ -41,7 +39,7 @@ export default function OurSolutionsSection() {
           <GridCol span={{ base: 12, md: 7 }}>
             <div className={classes.branchesSectionWrapper}>
               <Image
-                src="/we-offer-branch-section.png"
+                src="/images/we-offer-branch-section.png"
                 alt="Branches Background"
                 fill
                 className={classes.branchesSectionImage}

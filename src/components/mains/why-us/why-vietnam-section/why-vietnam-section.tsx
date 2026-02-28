@@ -23,8 +23,8 @@ const ROWS: { label: string; content: ReactNode }[] = [
     content: (
       <>
         Hiring staff in Vietnam can lead to{' '}
-        <span className={classes.highlight}>significant cost savings</span>.
-        Lower labour and living costs and competitive salary expectations.
+        <span className={classes.highlight}>significant cost savings</span>. Lower
+        labour and living costs and competitive salary expectations.
       </>
     ),
   },
@@ -34,8 +34,8 @@ const ROWS: { label: string; content: ReactNode }[] = [
       <>
         The Vietnamese workforce is{' '}
         <span className={classes.highlight}>highly proficient in English</span>,
-        facilitating seamless collaboration with international clients and
-        remote teams.
+        facilitating seamless collaboration with international clients and remote
+        teams.
       </>
     ),
   },
@@ -74,7 +74,7 @@ export default function WhyVietnamSection() {
       <div className={classes.backgroundStack}>
         <div className={classes.baseBackground}>
           <Image
-            src="/city-background.webp"
+            src="/images/city-background.webp"
             alt="City background"
             fill
             className={classes.backgroundImage}
@@ -91,35 +91,20 @@ export default function WhyVietnamSection() {
             <Stack gap="xs" className={classes.quotesStack}>
               {QUOTES.map((q, i) => (
                 <Stack key={i} gap="xs" className={classes.quoteCard}>
-                  <Text className={classes.quoteText}>
-                    &ldquo;{q.quote}&rdquo;
-                  </Text>
+                  <Text className={classes.quoteText}>&ldquo;{q.quote}&rdquo;</Text>
                   <Text className={classes.quoteAuthor}>— {q.author}</Text>
                 </Stack>
               ))}
             </Stack>
-            <Grid
-              className={classes.grid}
-              gutter="lg"
-              columns={12}
-              align="center"
-            >
+            <Grid className={classes.grid} gutter="lg" columns={12} align="center">
               {ROWS.map((row, i) => (
                 <Fragment key={i}>
-                  <GridCol
-                    span={{ base: 5, md: 4 }}
-                    className={classes.cellLeft}
-                  >
+                  <GridCol span={{ base: 5, md: 4 }} className={classes.cellLeft}>
                     <Text className={classes.subtitle}>{row.label}</Text>
                   </GridCol>
-                  <GridCol
-                    span={{ base: 7, md: 8 }}
-                    className={classes.cellRight}
-                  >
+                  <GridCol span={{ base: 7, md: 8 }} className={classes.cellRight}>
                     <div className={classes.contentWrap}>
-                      <Text className={classes.subtitleContent}>
-                        {row.content}
-                      </Text>
+                      <Text className={classes.subtitleContent}>{row.content}</Text>
                     </div>
                   </GridCol>
                 </Fragment>
