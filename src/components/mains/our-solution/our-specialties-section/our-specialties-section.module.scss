@@ -84,7 +84,7 @@
         gap: 0.4rem;
 
         &::before {
-          content: "";
+          content: '';
           width: 0.35rem;
           height: 0.35rem;
           border-radius: 999px;
@@ -97,13 +97,22 @@
       }
 
       .moreBadgeText {
-        color: white;
-        font-size: clamp(0.8rem, 2.5vw, 1.2rem);
+        color: #fff;
+        font-size: clamp(0.9rem, 2.5vw, 1.3rem);
+        font-weight: 700;
         text-decoration: underline;
         text-underline-offset: 0.22em;
-        text-decoration-color: rgba(255, 255, 255, 0.7);
+        text-decoration-color: #fff;
+        text-decoration-thickness: 2px;
         cursor: pointer;
         display: inline-block;
+        transition: all 0.2s ease;
+
+        &:hover {
+          color: var(--elite-tech-talent-red);
+          text-decoration-color: var(--elite-tech-talent-red);
+          transform: scale(1.05);
+        }
       }
     }
   }

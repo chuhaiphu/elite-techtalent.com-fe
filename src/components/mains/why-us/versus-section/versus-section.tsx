@@ -1,34 +1,42 @@
-import { Stack, Text, Box, Center, Flex, Container } from "@mantine/core";
-import { IoCheckmarkCircleOutline } from "react-icons/io5";
-import VersusIcon from "@/components/icon/versus.svg";
-import classes from "./versus-section.module.scss";
-import type { ReactNode } from "react";
+import { Stack, Text, Box, Center, Flex, Container } from '@mantine/core';
+import { IoCheckmarkCircleOutline } from 'react-icons/io5';
+import VersusIcon from '@/components/icon/versus.svg';
+import classes from './versus-section.module.scss';
+import type { ReactNode } from 'react';
 
 const comparisonData: { category: string; left: ReactNode; right: string }[] = [
   {
-    category: "Quality",
-    left: "Rigorous technical screening",
-    right: "Keyword matching",
+    category: 'Quality',
+    left: 'Rigorous technical screening',
+    right: 'Keyword matching',
   },
   {
-    category: "Speed",
-    left: <>Curated shortlist in <span className="highlight">1–2 weeks</span></>,
-    right: "Long pipelines & back-and-forth",
+    category: 'Speed',
+    left: (
+      <>
+        Curated shortlist in <span className="highlight">1–2 weeks</span>
+      </>
+    ),
+    right: 'Long pipelines & back-and-forth',
   },
   {
-    category: "Effort",
-    left: "Fewer interviews, clearer decisions",
-    right: "Heavy internal filtering",
+    category: 'Effort',
+    left: 'Fewer interviews, clearer decisions',
+    right: 'Heavy internal filtering',
   },
   {
-    category: "Fit",
-    left: "Matched to your stack, seniority, and delivery style",
+    category: 'Fit',
+    left: 'Matched to your stack, seniority, and delivery style',
     right: '"Best available" candidates',
   },
   {
-    category: "Risk",
-    left: <>Consistent quality bar + <span className="highlight">backup</span> options</>,
-    right: "Inconsistent outcomes",
+    category: 'Risk',
+    left: (
+      <>
+        Consistent quality bar + <span className="highlight">backup</span> options
+      </>
+    ),
+    right: 'Inconsistent outcomes',
   },
 ];
 
@@ -41,12 +49,18 @@ export default function VersusSection() {
             Every week a role stays open costs you speed, revenue, and momentum.
           </Text>
           <Text className={classes.headerSubtitle} ta="center">
-            Partner with us to hire faster, spend less, and build stronger teams—without compromise.
+            Partner with us to hire faster, spend less, and build stronger
+            teams—without compromise.
           </Text>
         </Stack>
 
         <Box className={classes.contentWrap}>
-          <Flex className={classes.headerRow} align="center" justify="center" mb="lg">
+          <Flex
+            className={classes.headerRow}
+            align="center"
+            justify="center"
+            mb="lg"
+          >
             <Text className={classes.brandLeft}>
               Elite Tech <span>Talent</span>
             </Text>
@@ -60,14 +74,28 @@ export default function VersusSection() {
             <Stack gap="xl">
               {comparisonData.map((item, index) => (
                 <Box key={index} className={classes.comparisonRow}>
-                  <Flex className={classes.leftContent} align="center" justify="flex-start" gap="xs">
-                    <IoCheckmarkCircleOutline className={classes.checkIcon} size={64} />
-                    <Text className={classes.itemLeftText} ta="left">{item.left}</Text>
+                  <Flex
+                    className={classes.leftContent}
+                    align="center"
+                    justify="flex-start"
+                    gap={4}
+                  >
+                    <IoCheckmarkCircleOutline
+                      className={classes.checkIcon}
+                      size={64}
+                    />
+                    <Text className={classes.itemLeftText} ta="left">
+                      {item.left}
+                    </Text>
                   </Flex>
                   <Box className={classes.categoryPill}>
                     <Text className={classes.categoryLabel}>{item.category}</Text>
                   </Box>
-                  <Flex className={classes.rightContent} align="center" justify="flex-end">
+                  <Flex
+                    className={classes.rightContent}
+                    align="center"
+                    justify="flex-end"
+                  >
                     <Text className={classes.itemRightText} ta="right">
                       {item.right}
                     </Text>

@@ -48,30 +48,32 @@
     min-height: 24rem;
     scale: 1.02;
 
-    // Thêm các dòng dưới đây
-    transition: transform 0.4s ease; // Giúp scale mượt mà
-    overflow: hidden; // Quan trọng: Để hiệu ứng shimmer không tràn ra ngoài
+    transition: transform 0.4s ease;
+    overflow: hidden; // Important: Prevent overflow of the shimmer effect
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
-      left: -150%; // Bắt đầu ở bên ngoài phía bên trái
+      left: -150%; // Start from outside the left side
       width: 100%;
       height: 100%;
-      background: linear-gradient(to right,
-          transparent 0%,
-          rgba(255, 255, 255, 0.2) 50%, // Màu của tia sáng
-          transparent 100%);
-      transform: skewX(-25deg); // Làm tia sáng nghiêng đi cho đẹp
+      //Color of the light beam
+      background: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(255, 255, 255, 0.2) 50%,
+        transparent 100%
+      );
+      transform: skewX(-25deg); // Make the light beam slanted for a better look
       z-index: 2;
     }
 
     &:hover {
-      transform: scale(1.08); // Scale nhẹ lên một chút so với 1.05 gốc
+      transform: scale(1.08); // Slightly scale up compared to the original 1.05
 
       &::after {
-        // Kích hoạt animation shimmer khi hover
+        // Activate shimmer animation on hover
         animation: shimmer 0.8s ease-in-out;
       }
     }
@@ -81,10 +83,10 @@
     }
   }
 
-  // Định nghĩa animation shimmer
+  // Define shimmer animation
   @keyframes shimmer {
     100% {
-      left: 150%; // Chạy sang hẳn bên phải
+      left: 150%; // Move all the way to the right
     }
   }
 }

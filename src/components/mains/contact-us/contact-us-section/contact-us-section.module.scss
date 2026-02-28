@@ -112,41 +112,6 @@
     backdrop-filter: blur(10px);
     padding: 60px 50px;
     color: white;
-
-    .formTitle {
-      font-size: 2rem;
-      margin: 0;
-      font-weight: 500;
-    }
-
-    .formLabel {
-      color: white;
-      font-weight: 600;
-      font-size: 1.1rem;
-    }
-
-    .formInput {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-      color: white;
-      font-size: 1.1rem;
-      padding: 10px 0;
-
-      &:focus {
-        border-bottom-color: #fff !important;
-      }
-    }
-
-    .submitButton {
-      background-color: #0d1b3e;
-      height: 60px;
-      font-size: 1.1rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-
-      &:hover {
-        background-color: #08122a;
-      }
-    }
   }
 }
 

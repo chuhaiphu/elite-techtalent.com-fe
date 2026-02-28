@@ -21,27 +21,26 @@
     z-index: 2;
     height: 100%;
     padding-top: 2rem;
+    padding-bottom: 2rem;
 
     p {
       color: black;
-      font-size: 1.8rem;
+      font-size: clamp(1.1rem, 0.9rem + 1vw, 1.8rem);
       line-height: 1.5;
-
-      @media (max-width: 767px) {
-        display: none;
-      }
 
       &.firstParagraph span {
         font-family: var(--font-acherus), Arial, Helvetica, sans-serif;
         color: var(--elite-tech-talent-blue);
         font-weight: bold;
-        font-size: 2rem;
+        /* Tối thiểu 1.4rem, tối đa 2rem */
+        font-size: clamp(1.4rem, 1.1rem + 1.5vw, 2rem);
       }
 
       &.secondParagraph span {
         color: var(--elite-tech-talent-red);
         font-weight: bold;
-        font-size: 2rem;
+        /* Tối thiểu 1.4rem, tối đa 2rem */
+        font-size: clamp(1.4rem, 1.1rem + 1.5vw, 2rem);
       }
     }
   }

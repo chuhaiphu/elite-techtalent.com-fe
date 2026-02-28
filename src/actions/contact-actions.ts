@@ -3,7 +3,7 @@
 import React from "react";
 import nodemailer from "nodemailer";
 import { render } from "@react-email/render";
-import { ContactEmail } from "@/components/emails/contact-email";
+import { ContactEmail } from "@/components/primitives/contact-email/contact-email";
 
 interface ContactFormData {
   firstName: string;

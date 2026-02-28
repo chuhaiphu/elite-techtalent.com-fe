@@ -81,7 +81,7 @@
       text-align: center;
       flex-shrink: 0;
       z-index: 1;
-      width: 10rem;
+      width: clamp(5rem, 20vw, 10rem);
     }
 
     .categoryLabel {
@@ -93,7 +93,7 @@
     .itemRightText {
       font-size: 1.32rem;
 
-      >span {
+      > span {
         color: var(--elite-tech-talent-red);
         font-weight: 600;
         font-size: inherit;
@@ -127,7 +127,8 @@
       }
 
       .checkIcon {
-        font-size: 1.2rem;
+        width: 0.75rem;
+        height: 1rem;
       }
 
       .leftContent {

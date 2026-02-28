@@ -52,7 +52,6 @@
   }
 
   .grid {
-
     .cellLeft,
     .cellRight {
       padding-bottom: 1rem;
@@ -66,7 +65,7 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-        font-size: clamp(0.7rem, 2vw, 1.3rem);
+        font-size: clamp(0.8rem, 2vw, 1.3rem);
         font-weight: bold;
         background: linear-gradient(180deg, #84a9ff, #f5f8ff);
         border-radius: 1rem;
@@ -83,7 +82,7 @@
 
       .subtitleContent {
         color: white;
-        font-size: clamp(0.6rem, 1.8vw, 1.2rem);
+        font-size: clamp(0.8rem, 2vw, 1.3rem);
 
         span.highlight {
           font-size: inherit;
@@ -95,7 +94,8 @@
   }
 
   .quotesStack {
-    border: 1px solid color-mix(in srgb, var(--elite-tech-talent-red) 60%, transparent);
+    border: 1px solid
+      color-mix(in srgb, var(--elite-tech-talent-red) 60%, transparent);
     background: color-mix(in srgb, var(--elite-tech-talent-red) 30%, transparent);
     border-radius: 0.75rem;
 

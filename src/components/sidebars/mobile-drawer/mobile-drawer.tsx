@@ -1,16 +1,17 @@
-"use client";
-import { Burger, Drawer, Stack } from "@mantine/core";
-import Link from "next/link";
-import classes from "./mobile-drawer.module.scss";
-import { useDisclosure } from "@mantine/hooks";
+'use client';
+import { Burger, Drawer, Stack } from '@mantine/core';
+import Link from 'next/link';
+import classes from './mobile-drawer.module.scss';
+import { useDisclosure } from '@mantine/hooks';
 
 export function MobileDrawer() {
   const [opened, { toggle, close }] = useDisclosure(false);
 
   const links = [
-    { label: "Why Us", href: "/why-us" },
-    { label: "Solutions", href: "/our-solution" },
-    { label: "Contact Us", href: "/contact-us" },
+    { label: 'Home', href: '/' },
+    { label: 'Why Us', href: '/why-us' },
+    { label: 'Solutions', href: '/our-solution' },
+    { label: 'Contact Us', href: '/contact-us' },
     // { label: "Blogs", href: "/blogs" },
   ];
 
