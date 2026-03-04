@@ -4,7 +4,7 @@ import { Button, Grid, GridCol, Stack, TextInput, Textarea } from '@mantine/core
 import { useForm } from '@mantine/form';
 import { notifications } from '@mantine/notifications';
 import { useTransition } from 'react';
-import { sendContactEmailAction } from '@/actions/contact-actions';
+import { submitContactFormAction } from '@/actions/customer-contact-action';
 import classes from './contact-us-form.module.scss';
 
 interface FormValues {
@@ -44,7 +44,7 @@ export default function ContactUsForm() {
 
   const handleSubmit = async (values: FormValues) => {
     startTransition(async () => {
-      const result = await sendContactEmailAction(values);
+      const result = await submitContactFormAction(values);
 
       if (result.success) {
         notifications.show({

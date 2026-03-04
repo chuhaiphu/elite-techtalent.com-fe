@@ -4,6 +4,7 @@ import { Open_Sans } from 'next/font/google';
 import '@mantine/core/styles.css';
 import '@mantine/dates/styles.css';
 import '@mantine/notifications/styles.css';
+import '@mantine/tiptap/styles.css';
 import { ColorSchemeScript, mantineHtmlProps } from '@mantine/core';
 import { MantineConfigProvider } from '@/libs/mantine/config-provider';
 import './globals.scss';
