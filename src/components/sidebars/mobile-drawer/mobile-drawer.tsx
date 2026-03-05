@@ -12,7 +12,7 @@ export function MobileDrawer() {
     { label: 'Why Us', href: '/why-us' },
     { label: 'Solutions', href: '/our-solution' },
     { label: 'Contact Us', href: '/contact-us' },
-    // { label: "Blogs", href: "/blogs" },
+    { label: 'Blog', href: '/blogs' },
   ];
 
   return (

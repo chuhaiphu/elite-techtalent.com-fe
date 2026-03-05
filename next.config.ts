@@ -9,12 +9,16 @@ const nextConfig: NextConfig = {
   },
   typedRoutes: true,
   images: {
-    remotePatterns: [{ protocol: 'https', hostname: 'res.cloudinary.com' }],
+    remotePatterns: [
+      { protocol: 'https', hostname: 'res.cloudinary.com' },
+      { protocol: 'http', hostname: 'localhost', port: '8000', pathname: '/**' },
+    ],
     localPatterns: [
       {
         pathname: '/**',
       },
     ],
+    unoptimized: process.env.NODE_ENV === 'development',
   },
   turbopack: {
     rules: {

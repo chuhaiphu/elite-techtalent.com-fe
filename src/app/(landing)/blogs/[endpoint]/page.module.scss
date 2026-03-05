@@ -1,0 +1,138 @@
+.blogDetail {
+  max-width: 800px;
+  margin: 0 auto;
+
+  .backLink {
+    display: inline-block;
+    color: var(--elite-tech-talent-blue);
+    text-decoration: none;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    transition: opacity 0.15s ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  .heroImage {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+  }
+
+  .image {
+    object-fit: cover;
+  }
+
+  .title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--vinaup-black);
+    line-height: 1.3;
+    margin: 0 0 1rem 0;
+  }
+
+  .meta {
+    flex-wrap: wrap;
+  }
+
+  .content {
+    line-height: 1.8;
+    font-size: 1.05rem;
+    color: var(--vinaup-black);
+
+    h1 {
+      font-size: 1.8rem;
+      line-height: 1.3;
+      margin: 2rem 0 1rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      line-height: 1.3;
+      margin: 1.75rem 0 0.75rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      line-height: 1.4;
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+
+    p:empty {
+      padding: 1.1rem 0;
+    }
+
+    a {
+      color: var(--elite-tech-talent-blue);
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 0.5rem;
+    }
+
+    blockquote {
+      margin: 1.5rem 0;
+      padding: 1rem 1.5rem;
+      border-left: 4px solid var(--elite-tech-talent-blue);
+      background: var(--vinaup-soft-gray);
+      border-radius: 0 0.5rem 0.5rem 0;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    ul,
+    ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    li > p {
+      display: inline;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--vinaup-light-gray);
+      margin: 2rem 0;
+    }
+
+    mark {
+      font-size: inherit;
+    }
+  }
+
+  .additionalImage {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  .blogDetail {
+    .title {
+      font-size: 1.5rem;
+    }
+
+    .content {
+      font-size: 1rem;
+    }
+  }
+}

@@ -29,7 +29,9 @@ export default function LandingHeader() {
         <Link href={{ pathname: '/contact-us' }} className={classes.navItem}>
           Contact Us
         </Link>
-        {/* <Link href={{ pathname: "/blogs" }} className={classes.navItem}>Blogs</Link> */}
+        <Link href={{ pathname: '/blogs' }} className={classes.navItem}>
+          Blog
+        </Link>
       </Flex>
 
       {/* Mobile Drawer */}
